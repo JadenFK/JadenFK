@@ -95,17 +95,22 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
 		</div>
 		
 		<p>最近一直在用IntelliJ idea写代码，开发出的管理系统，老是出现下面的问题，在网上查，发现是因为端口占用问题，遇到了好多次，都要去网上搜，想了想不如自己写一个博客，更能看的懂点。</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>管理系统显示出现问题如下：<br><img src="https://jadenfk.github.io/2019/1/8/Tomcat-端口占用问题/SessionPro.png" alt="SessionPro"><br>IntelliJ idea代码问题显示如下：<br><img src="https://jadenfk.github.io/2019/1/8/Tomcat-端口占用问题/codePro.png" alt="codePro"><br>经过上网查到原因是因为Tomcat端口被占用，自己使用的端口查询如下：<br><img src="https://jadenfk.github.io/2019/1/8/Tomcat-端口占用问题/portSearch.png" alt="portSearch"></p>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>windows+R打开运行，输入cmd，打开命令窗口<br><img src="https://jadenfk.github.io/2019/1/8/Tomcat-端口占用问题/run.png" alt="run"><br>若是在win10操作系统下，可在左下角搜索框直接输入cmd，按回车即可打开cmd命令窗口<br><img src="https://jadenfk.github.io/2019/1/8/Tomcat-端口占用问题/win10cmd.png" alt="win10cmd"><br>打开cmd命令窗口后，输入</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>管理系统显示出现问题如下：<br><img src="https://JadenFK.github.io/2019/01/08/Tomcat-端口占用问题/SessionPro.png" alt="SessionPro"><br>IntelliJ idea代码问题显示如下：<br><img src="https://jadenfk.github.io/2019/01/08/Tomcat-端口占用问题/codePro.png" alt="codePro"><br>经过上网查到原因是因为Tomcat端口被占用，自己使用的端口查询如下：<br><img src="https://jadenfk.github.io/2019/01/08/Tomcat-端口占用问题/portSearch.png" alt="portSearch"></p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>windows+R打开运行，输入cmd，打开命令窗口<br><img src="https://jadenfk.github.io/2019/01/08/Tomcat-端口占用问题/run.png" alt="run"><br>若是在win10操作系统下，可在左下角搜索框直接输入cmd，按回车即可打开cmd命令窗口<br><img src="https://jadenfk.github.io/2019/01/08/Tomcat-端口占用问题/win10cmd.png" alt="win10cmd"><br>打开cmd命令窗口后，输入</p>
 <p><table><td bgcolor="#000">netstat -ano</td></table><br>找到占用端口的进程的PID，去任务管理器中的详细信息中找到该PID，结束它，重新运行程序即可，如下。</p>
-<p><img src="https://jadenfk.github.io/2019/1/8/Tomcat-端口占用问题/killPort.png" alt="killPort"></p>
+<p><img src="https://jadenfk.github.io/2019/01/08/Tomcat-端口占用问题/killPort.png" alt="killPort"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java/">Java</a>
+  </div>
 
 
 
@@ -138,7 +143,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -159,6 +164,8 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
+			<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+		
 			<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
 		
 			<li><a href="/tags/版本控制工具/" title="版本控制工具">版本控制工具<sup>1</sup></a></li>
@@ -171,7 +178,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/版本控制工具/" style="font-size: 10px;">版本控制工具</a>
+       <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/版本控制工具/" style="font-size: 10px;">版本控制工具</a>
     </div>
   </div>
 
