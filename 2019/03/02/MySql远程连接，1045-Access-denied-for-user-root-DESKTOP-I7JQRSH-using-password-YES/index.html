@@ -4,12 +4,13 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>SVN的搭建 | </title>
+    <title>MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES) | </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="郭心全">
     
-    <meta name="description" content="由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。具体步骤主要参照博客：https://www.cnblogs.com">
+    <meta name="description" content="开发个东西，老是碰到坑人的问题，这不MySql远程连接问题又来了在进行MySql远程连接时，碰到了1045-Access denied for user ‘root‘@’DESKTOP-I7JQRSH’(usingpassword:YES),问题如下图
+###解决办法经过各种谷歌搜索，发现，先授予远">
     
     
     
@@ -77,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/12/27/SVN的搭建/" title="SVN的搭建" itemprop="url">SVN的搭建</a>
+      <a href="/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" title="MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES)" itemprop="url">MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES)</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="郭心全">郭心全</a>
     </p>
   <p class="article-time">
-    <time datetime="2018-12-27T07:22:17.000Z" itemprop="datePublished">2018-12-27</time>
+    <time datetime="2019-03-02T01:58:17.000Z" itemprop="datePublished">2019-03-02</time>
     
   </p>
 </header>
@@ -94,25 +95,18 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器端"><span class="toc-number">1.</span> <span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-number">2.</span> <span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.</span> <span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro1"><span class="toc-number">3.1.</span> <span class="toc-text">Pro1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro2"><span class="toc-number">3.2.</span> <span class="toc-text">Pro2</span></a></li></ol></li></ol>
+		
 		</div>
 		
-		<p>由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧<br>SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。<br>具体步骤主要参照博客：<a href="https://www.cnblogs.com/mq0036/p/5250198.html" target="_blank" rel="noopener">https://www.cnblogs.com/mq0036/p/5250198.html</a></p>
-<p>采用的服务器端（VisualSVN server）和客户端（TortoiseSVN）搭配使用，</p>
-<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>服务器端下载地址<br><a href="http://subversion.apache.org/packages.html" target="_blank" rel="noopener">http://subversion.apache.org/packages.html</a> 拉到最下面，如图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/VisualSVN.png" alt="VisualSVN"><br>服务器端选择VisualSVN进去，我的电脑是64位的，故我选择64bit，根据自己的电脑下载对应版本，如下图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/dlVS.png" alt="dlVS"><br>下载好后，进行安装<br>打开VisualSVN Server，右键’Repositories’-&gt;’Create New Repository …’-&gt;’Regular FSFS repository’-&gt;输入仓库名-&gt;’Empty repository’-&gt;’All Subversion users have Read/Write access’-&gt;create</p>
-<p><table><td bgcolor="#000">svn list <a href="https://MSI:8443/svn/hdl" target="_blank" rel="noopener">https://MSI:8443/svn/hdl</a></td></table><br>其中hdl是自己新建的Repository，上述命令是查看一下hdl下已有的目录<br>然后，把已有的项目传到服务器上，使用命令如下：</p>
-<p><table><td bgcolor="#000">svn import f:\hdl <a href="https://MSI:8443/svn/hdl" target="_blank" rel="noopener">https://MSI:8443/svn/hdl</a> -m “initial import”</td></table><br>上述命令格式是：svn import 项目目录 SVN Reposi URL -m “提交日志信息”<br>“initial import”是初始化日志信息<br>至此，服务器端已搭建好。我见有的Blog上是又下载了TortoiseSVN，然后在项目文件夹上右键-&gt;TortoiseSVN-&gt;导入-&gt;<br>输入SVNServer的URL-&gt;确定。我没试这个方法</p>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>客户端下载在服务器端的下载地址也有。也可通过其官网：<a href="http://tortoisesvn.net/downloads.html" target="_blank" rel="noopener">http://tortoisesvn.net/downloads.html</a><br>下载与自己电脑对应的版本，然后安装，安装的教程在网上百度下就可以了呀</p>
-<p>在桌面右键-&gt;SVN 检出,如下图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/SVN checkout.png" alt="SVNcheckout"><br>在版本库URL上填上SVN server的地址，确定即可。</p>
-<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h4 id="Pro1"><a href="#Pro1" class="headerlink" title="Pro1"></a>Pro1</h4><p><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/unknown服务器机.png" alt="unknown"><br>解决方法：1.打开防火墙-&gt;高级设置-&gt;入站规则-&gt;文件和打印机共享(回显请求-ICMPvr-In)，双击打开-&gt;作用域，远程Ip地址-&gt;勾选“任何IP地址(Y)”-&gt;确定。如图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/method1.png" alt="method1"><br>此方法在我这不通！！！！！我用的下面的方面<br>2.极端一点，关闭防火墙</p>
-<h4 id="Pro2"><a href="#Pro2" class="headerlink" title="Pro2"></a>Pro2</h4><p>问题1的解决，我一开始是把地址<a href="https://MSI:8443/svn/hdl中的MSI:8443改成了我的IP，即SVN" target="_blank" rel="noopener">https://MSI:8443/svn/hdl中的MSI:8443改成了我的IP，即SVN</a> Server所在的电脑的IP。出现了如下问题：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/method2.png" alt="method2"><br>这样即使关了防火墙也不行，所以我又把IP改回了MSI:8443，这样就可以了</p>
+		<p>开发个东西，老是碰到坑人的问题，这不MySql远程连接问题又来了<br>在进行MySql远程连接时，碰到了1045-Access denied for user ‘root‘@’DESKTOP-I7JQRSH’(using<br>password:YES),问题如下图<br><img src="https://JadenFK.github.io/2019/01/17/import了项目后eclipse第一次配置Tomcat/3.png" alt="3"></p>
+<p>###解决办法<br>经过各种谷歌搜索，发现，先授予远程访问权限，接着刷新权限，然后再重启MySql服务<br>在如下图中写相应代码：<br><img src="https://JadenFK.github.io/2019/01/17/import了项目后eclipse第一次配置Tomcat/2.png" alt="2"><br>代码如下：<br><img src="https://JadenFK.github.io/2019/01/17/import了项目后eclipse第一次配置Tomcat/1.png" alt="1"><br>而重启Mysql服务，只需打开任务管理器，找到服务，接着找到MySql的服务即可，MySQL57，右键重新启动，问题解决。。。。。。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/版本控制工具/">版本控制工具</a>
+  <span></span> <a href="/tags/MySql/">MySql</a>
   </div>
 
 
@@ -120,7 +114,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-title="SVN的搭建 | " data-tsina="" class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-title="MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES) | " data-tsina="" class="share clearfix">
   </div>
 
 </div>
@@ -129,19 +123,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/01/08/Tomcat-端口占用问题/" title="Tomcat 端口占用问题">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  Tomcat 端口占用问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/12/22/在Github上速搭建你自己的博客，让自己拥有一个网站吧/" title="在Github上速搭建你自己的博客，让自己拥有一个网站吧">
+<a href="/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" title="eclipse hibernate逆向生成.java、Dao、.hbm.xml">
  <strong>NEXT:</strong><br> 
- <span>在Github上速搭建你自己的博客，让自己拥有一个网站吧
+ <span>eclipse hibernate逆向生成.java、Dao、.hbm.xml
 </span>
 </a>
 </div>
@@ -154,7 +140,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器端"><span class="toc-number">1.</span> <span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-number">2.</span> <span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.</span> <span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro1"><span class="toc-number">3.1.</span> <span class="toc-text">Pro1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro2"><span class="toc-number">3.2.</span> <span class="toc-text">Pro2</span></a></li></ol></li></ol>
+  
   </div>
 
 <div id="asidepart">
