@@ -105,7 +105,7 @@
 <p><table><td bgcolor="#000">window.location.href=”${pageContext.request.contextPath}/fruit/fruit_index.jsp?page=”+page;  </td> </table>实现，以打开页面来实现返回的效果</p>
 <p><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/15.png" alt="15"><br>提一下，不管返回时还是第一次打开第一个带超链接的JSP都是从缓存中加载对应关键字的值，若没有该关键字就不给文本框或下拉框赋值<br>所以返回时，从sessioStorage取值，若有对应值则对文本框或下拉框赋值，没有不做操作，然后从对话框中获取值，若有值则进行数据重新查询加载，显示的页数根据easyUI datagrid的pageNumber显示，实现返回的效果，如下图：<br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/16.png" alt="16"><br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/17.png" alt="17"><br>同时，这也不需要</p>
 <p><table><td bgcolor="#000">$(function () {}) </td> </table><br>或者</p>
-<p><table><td bgcolor="#000">$(window).load(function () {}) </td> </table><br>进行多次get或post提交查询数据了</p>
+<p><table><td bgcolor="#000">$(window).load(function () {}) </td> </table><br>进行多次get或post提交查询数据了<br>即第一次展示上面两行代码的后面两张显示的注释的前台代码的图片</p>
   
 	</div>
 		<footer class="article-footer clearfix">
