@@ -103,7 +103,9 @@
 <p><table><td bgcolor="#000">$(window).load(function () {})    //是等待所有的内容都加载完后执行的   </td> </table><br>然后调用函数，重新数据加载<br>具体如下图</p>
 <p><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/10.png" alt="10"><br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/11.png" alt="11"><br>以上这些，都忽略了一个大的问题，就是没有关注分页的事，显然返回后重新加载数据也是第一页，即使从第五页点击的详细信息，返回的话也是查询后的第一页数据，只是模拟了返回的功能，没有考虑清楚，这时候得考虑页数(page)的问题<br>开会分配任务时，把这个交给了我远哥，现在想想也挺好，加入给我的话我基本会在上面的基础上去加页码记忆，而交给远哥，他去调页码，没太关注查询条件的保存我觉得，这也使得后面的页数加条件更容易一些。<br>下面来说说分页的实现：如下图：点击左侧树形菜单，page赋初值为1<br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/13.png" alt="13"><br>然后在响应页面获得page的值，然后付给easy UI datagrid的pageNumber属性，刷新时会显示相应的页面<br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/12.png" alt="12"><br>下图是超链接，点击详细信息，跳转到详细信息JSP页面，这次带着page的值传过去如下图红圈里的<br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/14.png" alt="14"><br>接着在详细信息的页面点击返回时的响应函数如下图：首先获得传过来的page，然后通过</p>
 <p><table><td bgcolor="#000">window.location.href=”${pageContext.request.contextPath}/fruit/fruit_index.jsp?page=”+page;  </td> </table>实现，以打开页面来实现返回的效果</p>
-<p><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/15.png" alt="15"></p>
+<p><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/15.png" alt="15"><br>提一下，不管返回时还是第一次打开第一个带超链接的JSP都是从缓存中加载对应关键字的值，若没有该关键字就不给文本框或下拉框赋值<br>所以返回时，从sessioStorage取值，若有对应值则对文本框或下拉框赋值，没有不做操作，然后从对话框中获取值，若有值则进行数据重新查询加载，显示的页数根据easyUI datagrid的pageNumber显示，实现返回的效果，如下图：<br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/16.png" alt="16"><br><img src="https://JadenFK.github.io/2019/03/06/“返回”按钮惹的“祸“祸”/17.png" alt="17"><br>同时，这也不需要</p>
+<p><table><td bgcolor="#000">$(function () {}) </td> </table><br>或者</p>
+<p><table><td bgcolor="#000">$(window).load(function () {}) </td> </table><br>进行多次get或post提交查询数据了</p>
   
 	</div>
 		<footer class="article-footer clearfix">
