@@ -1,103 +1,114 @@
-
- <!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>SVN的搭建 | </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="郭心全">
-    
-    <meta name="description" content="由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。具体步骤主要参照博客：https://www.cnblogs.com">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/郭心全-原图.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/郭心全-原图.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
+  <title>SVN的搭建 | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。具体步骤主要参照博客：https://www.cnblogs.com/mq0036/p/5250198.html 采用的服务器端（VisualSVN server）和客">
+<meta name="keywords" content="版本控制工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVN的搭建">
+<meta property="og:url" content="http://yoursite.com/2018/12/27/SVN的搭建/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。具体步骤主要参照博客：https://www.cnblogs.com/mq0036/p/5250198.html 采用的服务器端（VisualSVN server）和客">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/VisualSVN.png">
+<meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/dlVS.png">
+<meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/SVN checkout.png">
+<meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/unknown服务器机.png">
+<meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/method1.png">
+<meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/method2.png">
+<meta property="og:updated_time" content="2018-12-30T09:10:31.584Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SVN的搭建">
+<meta name="twitter:description" content="由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。具体步骤主要参照博客：https://www.cnblogs.com/mq0036/p/5250198.html 采用的服务器端（VisualSVN server）和客">
+<meta name="twitter:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/VisualSVN.png">
+  
+    <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
 </head>
 </html>
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/gxqlogo.svg" alt="" title=""></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title=""></a></h1>
-				<h2 class="blog-motto">自信是成功的阶梯，自律是成长的保障。</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">标签</a></li>
-					
-						<li><a href="/">分类</a></li>
-					
-						<li><a href="/">存档</a></li>
-					
-						<li><a href="/aboutLife">关于生活</a></li>
-					
-						<li><a href="/aboutMe">关于我</a></li>
-					
-					<li>
-					
-					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="Search">
-                        <input name="tn" type="hidden" value="bds">
-                        <input name="cl" type="hidden" value="3">
-                        <input name="ct" type="hidden" value="2097152">
-						<input type="hidden" name="si" value="yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</ul></nav>			
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>12</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>7</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope="" itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+        <section id="main"><article id="post-SVN的搭建" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/27/SVN的搭建/" class="article-date">
+  <time class="post-time" datetime="2018-12-27T07:22:17.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br>
+    <span class="post-day">27</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
     
-      <a href="/2018/12/27/SVN的搭建/" title="SVN的搭建" itemprop="url">SVN的搭建</a>
-  </h1>
-  <p class="article-author">By
     
-      <a href="http://yoursite.com" title="郭心全">郭心全</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2018-12-27T07:22:17.000Z" itemprop="datePublished">2018-12-27</time>
-    
-  </p>
-</header>
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SVN的搭建
+    </h1>
+  
 
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器端"><span class="toc-number">1.</span> <span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-number">2.</span> <span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.</span> <span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro1"><span class="toc-number">3.1.</span> <span class="toc-text">Pro1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro2"><span class="toc-number">3.2.</span> <span class="toc-text">Pro2</span></a></li></ol></li></ol>
-		</div>
-		
-		<p>由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧<br>SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。<br>具体步骤主要参照博客：<a href="https://www.cnblogs.com/mq0036/p/5250198.html" target="_blank" rel="noopener">https://www.cnblogs.com/mq0036/p/5250198.html</a></p>
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧<br>SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。<br>具体步骤主要参照博客：<a href="https://www.cnblogs.com/mq0036/p/5250198.html" target="_blank" rel="noopener">https://www.cnblogs.com/mq0036/p/5250198.html</a></p>
 <p>采用的服务器端（VisualSVN server）和客户端（TortoiseSVN）搭配使用，</p>
 <h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>服务器端下载地址<br><a href="http://subversion.apache.org/packages.html" target="_blank" rel="noopener">http://subversion.apache.org/packages.html</a> 拉到最下面，如图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/VisualSVN.png" alt="VisualSVN"><br>服务器端选择VisualSVN进去，我的电脑是64位的，故我选择64bit，根据自己的电脑下载对应版本，如下图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/dlVS.png" alt="dlVS"><br>下载好后，进行安装<br>打开VisualSVN Server，右键’Repositories’-&gt;’Create New Repository …’-&gt;’Regular FSFS repository’-&gt;输入仓库名-&gt;’Empty repository’-&gt;’All Subversion users have Read/Write access’-&gt;create</p>
 <p><table><td bgcolor="#000">svn list <a href="https://MSI:8443/svn/hdl" target="_blank" rel="noopener">https://MSI:8443/svn/hdl</a></td></table><br>其中hdl是自己新建的Repository，上述命令是查看一下hdl下已有的目录<br>然后，把已有的项目传到服务器上，使用命令如下：</p>
@@ -106,256 +117,192 @@
 <p>在桌面右键-&gt;SVN 检出,如下图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/SVN checkout.png" alt="SVNcheckout"><br>在版本库URL上填上SVN server的地址，确定即可。</p>
 <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h4 id="Pro1"><a href="#Pro1" class="headerlink" title="Pro1"></a>Pro1</h4><p><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/unknown服务器机.png" alt="unknown"><br>解决方法：1.打开防火墙-&gt;高级设置-&gt;入站规则-&gt;文件和打印机共享(回显请求-ICMPvr-In)，双击打开-&gt;作用域，远程Ip地址-&gt;勾选“任何IP地址(Y)”-&gt;确定。如图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/method1.png" alt="method1"><br>此方法在我这不通！！！！！我用的下面的方面<br>2.极端一点，关闭防火墙</p>
 <h4 id="Pro2"><a href="#Pro2" class="headerlink" title="Pro2"></a>Pro2</h4><p>问题1的解决，我一开始是把地址<a href="https://MSI:8443/svn/hdl中的MSI:8443改成了我的IP，即SVN" target="_blank" rel="noopener">https://MSI:8443/svn/hdl中的MSI:8443改成了我的IP，即SVN</a> Server所在的电脑的IP。出现了如下问题：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/method2.png" alt="method2"><br>这样即使关了防火墙也不行，所以我又把IP改回了MSI:8443，这样就可以了</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/版本控制工具/">版本控制工具</a>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-id="cjt41r1q60006787kjh7dt3xz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制工具/">版本控制工具</a></li></ul>
+
+    </footer>
   </div>
-
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-title="SVN的搭建 | " data-tsina="" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev">
- <a href="/2019/01/08/Tomcat-端口占用问题/" title="Tomcat 端口占用问题">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  Tomcat 端口占用问题</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2018/12/22/在Github上速搭建你自己的博客，让自己拥有一个网站吧/" title="在Github上速搭建你自己的博客，让自己拥有一个网站吧">
- <strong>NEXT:</strong><br> 
- <span>在Github上速搭建你自己的博客，让自己拥有一个网站吧
-</span>
-</a>
-</div>
-
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/08/Tomcat-端口占用问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Tomcat 端口占用问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/22/在Github上速搭建你自己的博客，让自己拥有一个网站吧/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">在Github上速搭建你自己的博客，让自己拥有一个网站吧</div>
+    </a>
+  
 </nav>
 
-	
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器端"><span class="toc-number">1.</span> <span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-number">2.</span> <span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.</span> <span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro1"><span class="toc-number">3.1.</span> <span class="toc-text">Pro1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pro2"><span class="toc-number">3.2.</span> <span class="toc-text">Pro2</span></a></li></ol></li></ol>
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
   
-
-  
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">4</span></li></ul>
-  </div>
+</article>
 
 
-  
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/JS-easyUI/" title="JS/easyUI">JS/easyUI<sup>1</sup></a></li>
-		
-			<li><a href="/tags/Java/" title="Java">Java<sup>2</sup></a></li>
-		
-			<li><a href="/tags/MySql/" title="MySql">MySql<sup>1</sup></a></li>
-		
-			<li><a href="/tags/SSM/" title="SSM">SSM<sup>2</sup></a></li>
-		
-			<li><a href="/tags/eclipse/" title="eclipse">eclipse<sup>2</sup></a></li>
-		
-			<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
-		
-			<li><a href="/tags/版本控制工具/" title="版本控制工具">版本控制工具<sup>1</sup></a></li>
-		
-		</ul>
-</div>
 
-
-  
-  <div class="tagcloudlist">
-    <p class="asidetitle">Tag Cloud</p>
-    <div class="tagcloudlist clearfix">
-       <a href="/tags/JS-easyUI/" style="font-size: 10px;">JS/easyUI</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/tags/SSM/" style="font-size: 20px;">SSM</a> <a href="/tags/eclipse/" style="font-size: 20px;">eclipse</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/版本控制工具/" style="font-size: 10px;">版本控制工具</a>
-    </div>
-  </div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
-      <li><a href="http://yangjian.me" target="_blank" title="YangJian">Alimon's Blog</a></li>
-      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
-    </ul>
-</div>
-
-
-  <div class="rsspart">
-	<a href="" target="_blank" title="rss">RSS</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer">
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<div class="social-font">
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2019 
-		
-		<a href="http://yoursite.com" target="_blank" title="郭心全">郭心全</a>
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
+</section>
         
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title"></h1>
+    <h2 class="blog-subtitle">自信是成功的阶梯，自律是成长的保障。</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
 
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>12</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>7</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 郭心全<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
 <script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
   });
-});     
 </script>
 
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
 
 
 
-
-
-
-
-
-  </body>
+  </div>
+</body>
 </html>
-

@@ -1,353 +1,297 @@
-
- <!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39; | </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="郭心全">
-    
-    <meta name="description" content="进行Mybatis夺表查询时，使用了association,具体使用如下：结果出现了异常：There is no getter for property named ‘vg_province_production’in ‘com.edu.cau.orm.VgProvinceProduction’，在">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/郭心全-原图.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/郭心全-原图.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
+  <title>Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39; | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="进行Mybatis夺表查询时，使用了association,具体使用如下：结果出现了异常：There is no getter for property named ‘vg_province_production’in ‘com.edu.cau.orm.VgProvinceProduction’，在谷歌上搜索时找了好多，错误都和我不一样，有的让在Mapper接口中加@Param(…),而我的是一个">
+<meta name="keywords" content="SSM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39;">
+<meta property="og:url" content="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="进行Mybatis夺表查询时，使用了association,具体使用如下：结果出现了异常：There is no getter for property named ‘vg_province_production’in ‘com.edu.cau.orm.VgProvinceProduction’，在谷歌上搜索时找了好多，错误都和我不一样，有的让在Mapper接口中加@Param(…),而我的是一个">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/1.png">
+<meta property="og:image" content="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/2.png">
+<meta property="og:image" content="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/3.png">
+<meta property="og:updated_time" content="2019-03-02T03:43:09.829Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39;">
+<meta name="twitter:description" content="进行Mybatis夺表查询时，使用了association,具体使用如下：结果出现了异常：There is no getter for property named ‘vg_province_production’in ‘com.edu.cau.orm.VgProvinceProduction’，在谷歌上搜索时找了好多，错误都和我不一样，有的让在Mapper接口中加@Param(…),而我的是一个">
+<meta name="twitter:image" content="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
 </head>
 </html>
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/gxqlogo.svg" alt="" title=""></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title=""></a></h1>
-				<h2 class="blog-motto">自信是成功的阶梯，自律是成长的保障。</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">标签</a></li>
-					
-						<li><a href="/">分类</a></li>
-					
-						<li><a href="/">存档</a></li>
-					
-						<li><a href="/aboutLife">关于生活</a></li>
-					
-						<li><a href="/aboutMe">关于我</a></li>
-					
-					<li>
-					
-					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="Search">
-                        <input name="tn" type="hidden" value="bds">
-                        <input name="cl" type="hidden" value="3">
-                        <input name="ct" type="hidden" value="2097152">
-						<input type="hidden" name="si" value="yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</ul></nav>			
-</div>
-
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope="" itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" title="Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39;" itemprop="url">Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39;</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://yoursite.com" title="郭心全">郭心全</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2019-03-02T03:00:29.000Z" itemprop="datePublished">2019-03-02</time>
-    
-  </p>
-</header>
-
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		
-		</div>
-		
-		<p>进行Mybatis夺表查询时，使用了association,具体使用如下：<br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/1.png" alt="1"><br>结果出现了异常：There is no getter for property named ‘vg_province_production’<br>in ‘com.edu.cau.orm.VgProvinceProduction’，在谷歌上搜索时找了好多，错误都和我不一样，有的让在Mapper接口中加@Param(…),而我的是一个表的属性，我一直认为这是表在数据库中的名，其实这是一个属性，在加<association>的表对应的实体类中定义，如：我用了vg_basic_info和vg_province_production两张表，要在vg_basic_info中使用vg_province_production，我就在vg_basic_info的.xml文件中添加association把vg_province_production的属性加过来，如上图所示，但是出现了此次异常<br>解决办法：<br>出现异常原因：在vg_basic_info对应的实体类中没有定义此属性，且<association property="vgProvinceProduction">中的vgProvinceProduction不是数据库的表名，而是vg_province_production对应的实体类VgProvinceProduction 在vg_basic_info对应的实体类中实例化一个对象的名<br>如下：<br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/2.png" alt="2"><br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/3.png" alt="3"><br>问题解决。。。。。</association></association></p>
-  
-	</div>
-		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/SSM/">SSM</a>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>12</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>7</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
   </div>
+</div>
 
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-title="Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39; | " data-tsina="" class="share clearfix">
+        <section id="main"><article id="post-Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" class="article-date">
+  <time class="post-time" datetime="2019-03-02T03:00:29.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br>
+    <span class="post-day">02</span>
+  </time>
+</a>
+   
   </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39;
+    </h1>
+  
 
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev">
- <a href="/2019/03/03/HTTP-Status-500-Internal-Server-Error/" title="HTTP Status 500-Internal Server Error">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  HTTP Status 500-Internal Server Error</span>
-</a>
-</div>
+        <div>
+          
+          
+              
 
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>进行Mybatis夺表查询时，使用了association,具体使用如下：<br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/1.png" alt="1"><br>结果出现了异常：There is no getter for property named ‘vg_province_production’<br>in ‘com.edu.cau.orm.VgProvinceProduction’，在谷歌上搜索时找了好多，错误都和我不一样，有的让在Mapper接口中加@Param(…),而我的是一个表的属性，我一直认为这是表在数据库中的名，其实这是一个属性，在加<association>的表对应的实体类中定义，如：我用了vg_basic_info和vg_province_production两张表，要在vg_basic_info中使用vg_province_production，我就在vg_basic_info的.xml文件中添加association把vg_province_production的属性加过来，如上图所示，但是出现了此次异常<br>解决办法：<br>出现异常原因：在vg_basic_info对应的实体类中没有定义此属性，且<association property="vgProvinceProduction">中的vgProvinceProduction不是数据库的表名，而是vg_province_production对应的实体类VgProvinceProduction 在vg_basic_info对应的实体类中实例化一个对象的名<br>如下：<br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/2.png" alt="2"><br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/3.png" alt="3"><br>问题解决。。。。。</association></association></p>
 
-<div class="next">
-<a href="/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" title="MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES)">
- <strong>NEXT:</strong><br> 
- <span>MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES)
-</span>
-</a>
-</div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjt41r1qb0007787kn040puzk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
 
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/03/HTTP-Status-500-Internal-Server-Error/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTTP Status 500-Internal Server Error
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES)</div>
+    </a>
+  
 </nav>
 
-	
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
   
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">4</span></li></ul>
-  </div>
+</article>
 
 
-  
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/JS-easyUI/" title="JS/easyUI">JS/easyUI<sup>1</sup></a></li>
-		
-			<li><a href="/tags/Java/" title="Java">Java<sup>2</sup></a></li>
-		
-			<li><a href="/tags/MySql/" title="MySql">MySql<sup>1</sup></a></li>
-		
-			<li><a href="/tags/SSM/" title="SSM">SSM<sup>2</sup></a></li>
-		
-			<li><a href="/tags/eclipse/" title="eclipse">eclipse<sup>2</sup></a></li>
-		
-			<li><a href="/tags/github/" title="github">github<sup>2</sup></a></li>
-		
-			<li><a href="/tags/版本控制工具/" title="版本控制工具">版本控制工具<sup>1</sup></a></li>
-		
-		</ul>
-</div>
 
-
-  
-  <div class="tagcloudlist">
-    <p class="asidetitle">Tag Cloud</p>
-    <div class="tagcloudlist clearfix">
-       <a href="/tags/JS-easyUI/" style="font-size: 10px;">JS/easyUI</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/tags/SSM/" style="font-size: 20px;">SSM</a> <a href="/tags/eclipse/" style="font-size: 20px;">eclipse</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/版本控制工具/" style="font-size: 10px;">版本控制工具</a>
-    </div>
-  </div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
-      <li><a href="http://yangjian.me" target="_blank" title="YangJian">Alimon's Blog</a></li>
-      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
-    </ul>
-</div>
-
-
-  <div class="rsspart">
-	<a href="" target="_blank" title="rss">RSS</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer">
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<div class="social-font">
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2019 
-		
-		<a href="http://yoursite.com" target="_blank" title="郭心全">郭心全</a>
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
+</section>
         
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title"></h1>
+    <h2 class="blog-subtitle">自信是成功的阶梯，自律是成长的保障。</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
 
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>12</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>7</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 郭心全<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
 <script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
   });
-});     
 </script>
 
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
 
 
 
-
-
-
-
-
-  </body>
+  </div>
+</body>
 </html>
-
