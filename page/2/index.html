@@ -111,32 +111,16 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>经过了好多天，终于有点进展了，好歹显示了个页面，这个菜需要慢慢来进步啊
 下面我来记录下自己搭建博客、更换主题、写第一篇博客遇到的问题，与诸君共勉
-</code></pre><h2 id="来吧，看我这菜鸟遇到的问题"><a href="#来吧，看我这菜鸟遇到的问题" class="headerlink" title="来吧，看我这菜鸟遇到的问题"></a>来吧，看我这菜鸟遇到的问题</h2><h4 id="Pro1"><a href="#Pro1" class="headerlink" title="Pro1"></a>Pro1</h4><table><td bgcolor="#000">FATAL can not read an implicit mapping pair; a colon is missed at line 86, colum<br>n 16:<br>      branch:master</td></table><br>原因：没有加空格，master和branch:之间一定要加<strong>空格</strong>,且type: repo: branch:后面都有空格<br><br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/b_mBlank.png" alt="空格"><br><br>#### Pro2<br><table><td bgcolor="#000">$ hexo deploy<br>ERROR Deployer not found: gi</td></table><br>原因：没有这个文件<br>解决办法：<table><td bgcolor="#000">$ npm install –save hexo-deployer-git</td></table>
-
-<h4 id="Pro3"><a href="#Pro3" class="headerlink" title="Pro3"></a>Pro3</h4><table><td bgcolor="#000">$ hexo deploy                                                                           *** Please tell me who you are.</td></table><br>原因：创建git文件时信息不完善<br>解决办法：<br><table><td bgcolor="#000">git config –global user.email “<a href="mailto:you@example.com" target="_blank" rel="noopener">you@example.com</a>“                                        git config –global user.name “Your Name”</td></table>
-
-<h4 id="Pro4"><a href="#Pro4" class="headerlink" title="Pro4"></a>Pro4</h4><p>git init时出错</p>
-<table><td bgcolor="#000">$ git init                                                                              Initialized empty Git repository in E:/MyBlog/.git/</td></table><br>解决办法：<br><table><td bgcolor="#000">$ unset SSH_ASKPASS</td></table>
-
-<h4 id="Pro5"><a href="#Pro5" class="headerlink" title="Pro5"></a>Pro5</h4><table><td bgcolor="#000">npm install hexo-deployer-git<br>npm WARN deprecated <a href="mailto:swig@1.4.2" target="_blank" rel="noopener">swig@1.4.2</a>: This package is no longer maintained</td></table><br>原因：国外镜像访问不到了，试着切换到国内镜像，国内较好的NPM有CNPM和淘宝的NPM源比较稳定，我用的淘宝的<br><table><td bgcolor="#000">npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install hexo-deployer-git<br></td></table>
-
-<h4 id="Pro6"><a href="#Pro6" class="headerlink" title="Pro6"></a>Pro6</h4><p><table><td bgcolor="#000">$ ssh-add gxq_ssh_key                                                                   Could not open a connection to your authentication agent</td></table><br>原因：没有启动ssh agent<br>解决办法：1.输入如下命令，启动agent</p>
-<p><table><td bgcolor="#000">eval $(ssh-agent -s) 或者 eval <code>ssh-agent -s</code></td></table><br>其中，`是~键上的那个</p>
-<h4 id="Pro7"><a href="#Pro7" class="headerlink" title="Pro7"></a>Pro7</h4><p><table><td bgcolor="#000">$ git commit</td></table><br>之后进入vim编辑，此时处于不可编辑状态，点击字母C键可进入编辑状态，按Esc键，再连着按两次大写字母Z即可退出Vim</p>
-<h4 id="Pro8"><a href="#Pro8" class="headerlink" title="Pro8"></a>Pro8</h4><p>git deploy 部署到GitHub上出现错误如下</p>
-<p><table><td bgcolor="#000">To github.com:JadenFK/JadenFK.github.io.git<br>！[remote rejected] HEAD -&gt; master (push declined due to email privacy restrictions)<br>error: failed to push some refs to <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:JadenFK/JadenFK.github.io.git’<br>FATAL Something’s wrong. Maybe you can find the solution here: <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">http://hexo.io/docs/troubleshooting.html</a><br>Error: remote: error: GH007: Your push would publish a private email address.<br>remote: You can make your email public or disable this protection by visiting:<br>remote: <a href="http://github.com/settings/emails" target="_blank" rel="noopener">http://github.com/settings/emails</a><br>To github.com:JadenFK/JadenFK.github.io.git<br> ! [remote rejected] HEAD -&gt; master (push declined due to email privacy restrictions)<br>error: failed to push some refs to <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:JadenFK/JadenFK.github.io.git’<br>    at ChildProcess. (E:\MyBlog\node_modules\hexo-util\lib\spawn.js:37:17)<br>    at ChildProcess.emit (events.js:182:13)<br>    at ChildProcess.cp.emit (E:\MyBlog\node_modules\cross-spawn\lib\enoent.js:40:29)</td></table><br>解决办法：seting-&gt;emails-&gt;keep my email address private,不勾选</p>
-<h4 id="Pro9"><a href="#Pro9" class="headerlink" title="Pro9"></a>Pro9</h4><p><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/b_mBlank.png" alt="b_mBlank"><br>第一个JadenFK与github用户名一样，JadenFK.github.io必须是repositories的名字，就是new depositor时输入的名字。如下图：<img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/depositories.png" alt="deploy"></p>
-<h4 id="Pro10"><a href="#Pro10" class="headerlink" title="Pro10"></a>Pro10</h4><p>clone主题，进入要clone的主题的GitHub用户的Repositories,点击要进入的主题，绿色图标”Clone or download”,拷贝期地址，如图：<br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/theme_address.png" alt="theme_address"><br>然后再Git Bash终端，自己建立的博客文件夹下，输入git clone 主题仓库地址 themes/主题名字。<br>主题名字就是.com后面的那个，比如我clone的是这个wizicer</p>
-<p><table><td bgcolor="#000">$ git clone <a href="https://github.com/wizicer/IcerSite.git" target="_blank" rel="noopener">https://github.com/wizicer/IcerSite.git</a> themes/wizicer</td></table><br>接下来就是自动下载: </p>
-<p><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/theme_download.png" alt="themedownload"><br>然后打开_config.yml,把theme改成自己要的主题如下：<br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/rename_theme.png" alt="renametheme"><br>我把这里的landscape改为wizicer,接下来输入hexo clean,来清理缓存，然后hexo g -d 重新生成博客并且部署。</p>
-<h4 id="Pro11"><a href="#Pro11" class="headerlink" title="Pro11"></a>Pro11</h4><p>错误：</p>
-<p><table><td bgcolor="#000">WARN  No layout: index.html</td></table><br>因为clone的博客模板没有layout.啊。。。。。。。。。。</p>
-<h4 id="Pro12"><a href="#Pro12" class="headerlink" title="Pro12"></a>Pro12</h4><p>图片不显示问题。。。。。。。。。。。。卡了我好久<br>解决：代码要顶格写，否则不显示，如下<br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/picture_save.png" alt="picturesave"><br>改为：<br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/display_picture.png" alt="display_picture"><br>其中，我还参考了博客：<br><a href="https://www.jianshu.com/p/3db6a61d3782" target="_blank" rel="noopener">https://www.jianshu.com/p/3db6a61d3782</a> ，修改了hexo-asset-image插件，我是直接安装修改好的。</p>
-
+</code></pre><h2 id="来吧，看我这菜鸟遇到的问题"><a href="#来吧，看我这菜鸟遇到的问题" class="headerlink" title="来吧，看我这菜鸟遇到的问题"></a>来吧，看我这菜鸟遇到的问题</h2><h4 id="Pro1"><a href="#Pro1" class="headerlink" title="Pro1"></a>Pro1</h4><table><td bgcolor="#000">FATAL can not read an implicit mapping pair; a colon is missed at line 86, colum<br>n 16:<br>      branch:master</td></table><br>原因：没有加空格，master和branch:之间一定要加<strong>空格</strong>,且type: repo: branch:后面都有空格<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/12/22/搭建博客问题总结/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/22/搭建博客问题总结/" data-id="cjtefn7y7000iso7kb5dpqzzy" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/22/搭建博客问题总结/" data-id="cjtefydvf000nq87katzgyg07" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -186,16 +170,15 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/12/19/hello-world/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/hello-world/" data-id="cjtefn7y00008so7k0qs8ls0n" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/19/hello-world/" data-id="cjtefydv3000fq87klwi4zptd" class="article-share-link">分享</a>
       
       
     </footer>

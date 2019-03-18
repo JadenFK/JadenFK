@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/unknown服务器机.png">
 <meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/method1.png">
 <meta property="og:image" content="https://JadenFK.github.io/2018/12/27/SVN的搭建/method2.png">
-<meta property="og:updated_time" content="2018-12-30T09:10:31.584Z">
+<meta property="og:updated_time" content="2019-03-18T14:22:45.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVN的搭建">
 <meta name="twitter:description" content="由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。具体步骤主要参照博客：https://www.cnblogs.com/mq0036/p/5250198.html 采用的服务器端（VisualSVN server）和客">
@@ -118,7 +118,7 @@
       
         <p>由于项目需要，使用了SVN这个版本控制工具，笔者还曾考虑用github，但感觉SVN简单点，有时间了试试搭建一下GitHub，下面来看我的搭建过程吧<br>SVN是SubVersion的缩写，即版本控制系统，可以达到团队合作开发软件的目的。<br>具体步骤主要参照博客：<a href="https://www.cnblogs.com/mq0036/p/5250198.html" target="_blank" rel="noopener">https://www.cnblogs.com/mq0036/p/5250198.html</a></p>
 <p>采用的服务器端（VisualSVN server）和客户端（TortoiseSVN）搭配使用，</p>
-<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>服务器端下载地址<br><a href="http://subversion.apache.org/packages.html" target="_blank" rel="noopener">http://subversion.apache.org/packages.html</a> 拉到最下面，如图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/VisualSVN.png" alt="VisualSVN"><br>服务器端选择VisualSVN进去，我的电脑是64位的，故我选择64bit，根据自己的电脑下载对应版本，如下图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/dlVS.png" alt="dlVS"><br>下载好后，进行安装<br>打开VisualSVN Server，右键’Repositories’-&gt;’Create New Repository …’-&gt;’Regular FSFS repository’-&gt;输入仓库名-&gt;’Empty repository’-&gt;’All Subversion users have Read/Write access’-&gt;create</p>
+<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>服务器端下载地址<br><a href="http://subversion.apache.org/packages.html" target="_blank" rel="noopener">http://subversion.apache.org/packages.html</a> 拉到最下面，如图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/VisualSVN.png" alt="VisualSVN"><br><a id="more"></a><br>服务器端选择VisualSVN进去，我的电脑是64位的，故我选择64bit，根据自己的电脑下载对应版本，如下图：<br><img src="https://JadenFK.github.io/2018/12/27/SVN的搭建/dlVS.png" alt="dlVS"><br>下载好后，进行安装<br>打开VisualSVN Server，右键’Repositories’-&gt;’Create New Repository …’-&gt;’Regular FSFS repository’-&gt;输入仓库名-&gt;’Empty repository’-&gt;’All Subversion users have Read/Write access’-&gt;create</p>
 <p><table><td bgcolor="#000">svn list <a href="https://MSI:8443/svn/hdl" target="_blank" rel="noopener">https://MSI:8443/svn/hdl</a></td></table><br>其中hdl是自己新建的Repository，上述命令是查看一下hdl下已有的目录<br>然后，把已有的项目传到服务器上，使用命令如下：</p>
 <p><table><td bgcolor="#000">svn import f:\hdl <a href="https://MSI:8443/svn/hdl" target="_blank" rel="noopener">https://MSI:8443/svn/hdl</a> -m “initial import”</td></table><br>上述命令格式是：svn import 项目目录 SVN Reposi URL -m “提交日志信息”<br>“initial import”是初始化日志信息<br>至此，服务器端已搭建好。我见有的Blog上是又下载了TortoiseSVN，然后在项目文件夹上右键-&gt;TortoiseSVN-&gt;导入-&gt;<br>输入SVNServer的URL-&gt;确定。我没试这个方法</p>
 <h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>客户端下载在服务器端的下载地址也有。也可通过其官网：<a href="http://tortoisesvn.net/downloads.html" target="_blank" rel="noopener">http://tortoisesvn.net/downloads.html</a><br>下载与自己电脑对应的版本，然后安装，安装的教程在网上百度下就可以了呀</p>
@@ -129,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-id="cjtefn7xu0003so7kipi9b9ht" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-id="cjtefyduo0008q87ka3go2rbp" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制工具/">版本控制工具</a></li></ul>

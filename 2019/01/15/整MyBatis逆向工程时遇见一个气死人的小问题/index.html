@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/annotation.png">
 <meta property="og:image" content="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/delete.png">
 <meta property="og:image" content="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/success.png">
-<meta property="og:updated_time" content="2019-01-16T06:54:45.619Z">
+<meta property="og:updated_time" content="2019-03-18T14:21:53.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="整MyBatis逆向工程时遇见一个气死人的小问题">
 <meta name="twitter:description" content="最近在整Mybatis逆向工程时遇见一个跟吃了屎一样难受的问题，在pom.xml上配置好了插件，但是在maven中没有mybatis-generator,而是org.mybatis.generator:mybatis-generator-maven-generator，且下面有个红色波浪线。由于mybatis-generator是配置好pom.xml自动生成的，搞得我蒙了，最后找到了一篇博客，才弄">
@@ -114,13 +114,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近在整Mybatis逆向工程时遇见一个跟吃了屎一样难受的问题，在pom.xml上配置好了插件，但是在maven中没有mybatis-generator,而是org.mybatis.generator:mybatis-generator-maven-generator，且下面有个红色波浪线。<br>由于mybatis-generator是配置好pom.xml自动生成的，搞得我蒙了，最后找到了一篇博客，才弄好，由于一开始没截图，也借鉴了博主的一张图如下，<br><a href="https://blog.csdn.net/jian_sheng_tan/article/details/78714876" target="_blank" rel="noopener">https://blog.csdn.net/jian_sheng_tan/article/details/78714876</a><br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/maven-generator.png" alt="maven-generator">S</p>
-<p>首先我的项目是从另一台电脑上拷过来的，可能是因为这出现了问题吧！<br>解决办法：<br>由于配置好pom.xml后开发工具自动下载，所以要先注释pom.xml配置的代码，如下<br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/annotation.png" alt="annotation"><br>然后找到对应的generator的文件夹删除掉，如下图：<br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/delete.png" alt="delete"><br>接着回到代码，把pom.xml的注释去掉，开发工具会自动下载需要的东西，也会在删除的地重新建一个generator文件，用来放下载的东西<br>然后问题就解决了，简单吧！！！！！！！！！！！！！！！！！！！！！如下图：<br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/success.png" alt="success"></p>
+        <p>最近在整Mybatis逆向工程时遇见一个跟吃了屎一样难受的问题，在pom.xml上配置好了插件，但是在maven中没有mybatis-generator,而是org.mybatis.generator:mybatis-generator-maven-generator，且下面有个红色波浪线。<br>由于mybatis-generator是配置好pom.xml自动生成的，搞得我蒙了，最后找到了一篇博客，才弄好，由于一开始没截图，也借鉴了博主的一张图如下，<br><a href="https://blog.csdn.net/jian_sheng_tan/article/details/78714876" target="_blank" rel="noopener">https://blog.csdn.net/jian_sheng_tan/article/details/78714876</a><br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/maven-generator.png" alt="maven-generator"><br><a id="more"></a><br>首先我的项目是从另一台电脑上拷过来的，可能是因为这出现了问题吧！<br>解决办法：<br>由于配置好pom.xml后开发工具自动下载，所以要先注释pom.xml配置的代码，如下<br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/annotation.png" alt="annotation"><br>然后找到对应的generator的文件夹删除掉，如下图：<br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/delete.png" alt="delete"><br>接着回到代码，把pom.xml的注释去掉，开发工具会自动下载需要的东西，也会在删除的地重新建一个generator文件，用来放下载的东西<br>然后问题就解决了，简单吧！！！！！！！！！！！！！！！！！！！！！如下图：<br><img src="https://JadenFK.github.io/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/success.png" alt="success"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/" data-id="cjtefn7y8000kso7kqjpbdnj9" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/" data-id="cjtefydvb000jq87k22kqrbel" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>

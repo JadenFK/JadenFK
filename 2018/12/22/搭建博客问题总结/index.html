@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/rename_theme.png">
 <meta property="og:image" content="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/picture_save.png">
 <meta property="og:image" content="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/display_picture.png">
-<meta property="og:updated_time" content="2018-12-27T07:25:25.681Z">
+<meta property="og:updated_time" content="2019-03-18T14:24:25.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建博客问题总结">
 <meta name="twitter:description" content="前言经过了好多天，终于有点进展了，好歹显示了个页面，这个菜需要慢慢来进步啊 下面我来记录下自己搭建博客、更换主题、写第一篇博客遇到的问题，与诸君共勉 来吧，看我这菜鸟遇到的问题Pro1FATAL can not read an implicit mapping pair; a colon is missed at line 86, column 16:      branch:master原因：没">
@@ -120,7 +120,7 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>经过了好多天，终于有点进展了，好歹显示了个页面，这个菜需要慢慢来进步啊
 下面我来记录下自己搭建博客、更换主题、写第一篇博客遇到的问题，与诸君共勉
-</code></pre><h2 id="来吧，看我这菜鸟遇到的问题"><a href="#来吧，看我这菜鸟遇到的问题" class="headerlink" title="来吧，看我这菜鸟遇到的问题"></a>来吧，看我这菜鸟遇到的问题</h2><h4 id="Pro1"><a href="#Pro1" class="headerlink" title="Pro1"></a>Pro1</h4><table><td bgcolor="#000">FATAL can not read an implicit mapping pair; a colon is missed at line 86, colum<br>n 16:<br>      branch:master</td></table><br>原因：没有加空格，master和branch:之间一定要加<strong>空格</strong>,且type: repo: branch:后面都有空格<br><br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/b_mBlank.png" alt="空格"><br><br>#### Pro2<br><table><td bgcolor="#000">$ hexo deploy<br>ERROR Deployer not found: gi</td></table><br>原因：没有这个文件<br>解决办法：<table><td bgcolor="#000">$ npm install –save hexo-deployer-git</td></table>
+</code></pre><h2 id="来吧，看我这菜鸟遇到的问题"><a href="#来吧，看我这菜鸟遇到的问题" class="headerlink" title="来吧，看我这菜鸟遇到的问题"></a>来吧，看我这菜鸟遇到的问题</h2><h4 id="Pro1"><a href="#Pro1" class="headerlink" title="Pro1"></a>Pro1</h4><table><td bgcolor="#000">FATAL can not read an implicit mapping pair; a colon is missed at line 86, colum<br>n 16:<br>      branch:master</td></table><br>原因：没有加空格，master和branch:之间一定要加<strong>空格</strong>,且type: repo: branch:后面都有空格<br><a id="more"></a><br><img src="https://jadenfk.github.io/2018/12/22/搭建博客问题总结/b_mBlank.png" alt="空格"><br><br>#### Pro2<br><table><td bgcolor="#000">$ hexo deploy<br>ERROR Deployer not found: gi</td></table><br>原因：没有这个文件<br>解决办法：<table><td bgcolor="#000">$ npm install –save hexo-deployer-git</td></table>
 
 <h4 id="Pro3"><a href="#Pro3" class="headerlink" title="Pro3"></a>Pro3</h4><table><td bgcolor="#000">$ hexo deploy                                                                           *** Please tell me who you are.</td></table><br>原因：创建git文件时信息不完善<br>解决办法：<br><table><td bgcolor="#000">git config –global user.email “<a href="mailto:you@example.com" target="_blank" rel="noopener">you@example.com</a>“                                        git config –global user.name “Your Name”</td></table>
 
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/22/搭建博客问题总结/" data-id="cjtefn7y7000iso7kb5dpqzzy" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/22/搭建博客问题总结/" data-id="cjtefydvf000nq87katzgyg07" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
