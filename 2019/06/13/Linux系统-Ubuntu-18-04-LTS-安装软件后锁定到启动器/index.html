@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/2.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/3.jpg">
-<meta property="og:updated_time" content="2019-06-13T15:29:49.021Z">
+<meta property="og:updated_time" content="2019-06-13T15:31:28.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统(Ubuntu 18.04 LTS)安装软件后锁定到启动器">
 <meta name="twitter:description" content="安装好了win10+Ubuntu系统，用Ubuntu搞开发，需要安装一些软件，但是Linux系统和Windows不一样，安装了软件后没有一个双击启动的.exe文件，这需要自己添加一个桌面的双击启动的标志，即标题的锁定到启动器，好了，这次不说废话，直接上我弄的步骤：在桌面右键，打开终端，运行 su root 命令，然后输入root的密码，转入到root下，这样对应后来有用，后面会提到。然后运行下面的">
@@ -115,7 +115,7 @@
       
         <p>安装好了win10+Ubuntu系统，用Ubuntu搞开发，需要安装一些软件，但是Linux系统和Windows不一样，安装了软件后没有一个双击启动的.exe文件，这需要自己添加一个桌面的双击启动的标志，即标题的锁定到启动器，好了，这次不说废话，直接上我弄的步骤：<br>在桌面右键，打开终端，运行</p>
 <p><table><td bgcolor="#000">su root</td> </table><br>命令，然后输入root的密码，转入到root下，这样对应后来有用，后面会提到。<br>然后运行下面的命令</p>
-<p><table><td bgcolor="#000">sudo gedit IntelliJIdea.desktop</td> </table><br>其中IntelliJIdea.desktop的.前面的时桌面图标的名称，即软件的名称。运行此命令后，会打开一个空白的编辑器，和Windows上的.txt差不多<br>在里面加上一些命令，即可，例如我的IntelliJ Idea的如下：<br><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png" alt="1"><br>其中要注意的就是Exec和Icon，/home后面要加上电脑的登录用户名<br>然后保存，退出<br>此时也可以不退出，点击上图的左上角的打开，其他文档，找到新建的IntelliJIdea.desktop,拖到桌面，双击运行即可，此时若是不能运行，就右键-属性-权限，把“允许作为程序执行文件选上”即可，这就是上面提到的为什么要转到root用户下，不是在电脑gxq2019用户下，因为会提示gxq2019权限不足。<br>安装Jdk,我安装的jdk版本时11.0.3，下载了以后直接解压缩就行，然后配置环境变量，参考如下：感谢博主<br><a href="https://blog.csdn.net/c4each/article/details/80584138" target="_blank" rel="noopener">https://blog.csdn.net/c4each/article/details/80584138</a><br>从第3步配置环境变量开始即可，右键-打开客户端，转到root用户下，执行命令，输入其代码，然后测试java -version<br>配置时发现，咦，jdk解压后没有jre,这需要自己安装，打开jdk的安装文件夹，即有bin的文件夹下，右键，打开客户端，执行下面的命令：</p>
+<p><table><td bgcolor="#000">sudo gedit IntelliJIdea.desktop</td> </table><br><a id="more"></a><br>其中IntelliJIdea.desktop的.前面的时桌面图标的名称，即软件的名称。运行此命令后，会打开一个空白的编辑器，和Windows上的.txt差不多<br>在里面加上一些命令，即可，例如我的IntelliJ Idea的如下：<br><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png" alt="1"><br>其中要注意的就是Exec和Icon，/home后面要加上电脑的登录用户名<br>然后保存，退出<br>此时也可以不退出，点击上图的左上角的打开，其他文档，找到新建的IntelliJIdea.desktop,拖到桌面，双击运行即可，此时若是不能运行，就右键-属性-权限，把“允许作为程序执行文件选上”即可，这就是上面提到的为什么要转到root用户下，不是在电脑gxq2019用户下，因为会提示gxq2019权限不足。<br>安装Jdk,我安装的jdk版本时11.0.3，下载了以后直接解压缩就行，然后配置环境变量，参考如下：感谢博主<br><a href="https://blog.csdn.net/c4each/article/details/80584138" target="_blank" rel="noopener">https://blog.csdn.net/c4each/article/details/80584138</a><br>从第3步配置环境变量开始即可，右键-打开客户端，转到root用户下，执行命令，输入其代码，然后测试java -version<br>配置时发现，咦，jdk解压后没有jre,这需要自己安装，打开jdk的安装文件夹，即有bin的文件夹下，右键，打开客户端，执行下面的命令：</p>
 <p><table><td bgcolor="#000">sudo ./jlink –module-path jmods –add-modules java.desktop –output jre</td> </table><br>这时就会安装好jre,在jdk-11.0.3下就有了jre,可以配置环境变量了<br>jdk的环境变量也配置好了，开始运行刚才建立的启动器吧，结果报错如下</p>
 <p><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/2.png" alt="2"><br>解决办法：桌面，右键-打开客户端，运行下面的命令</p>
 <p><table><td bgcolor="#000">sudo vim /etc/environment</td> </table><br>发现，还没安装vim编辑器，现在安装，执行如下命令</p>
@@ -127,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjwutkg1b0000407k6v5gvou3" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjwutl2ia0000c47kqq3gib0k" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
