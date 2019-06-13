@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Linux系统(Ubuntu 18.04 LTS)安装软件后锁定到启动器 | 自信是成功的阶梯，自律是成长的保障。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装好了win10+Ubuntu系统，用Ubuntu搞开发，需要安装一些软件，但是Linux系统和Windows不一样，安装了软件后没有一个双击启动的.exe文件，这需要自己添加一个桌面的双击启动的标志，即标题的锁定到启动器，好了，这次不说废话，直接上我弄的步骤：在桌面右键，打开终端，运行 su root 命令，然后输入root的密码，转入到root下，这样对应后来有用，后面会提到。然后运行下面的">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux系统(Ubuntu 18.04 LTS)安装软件后锁定到启动器">
+<meta property="og:url" content="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/index.html">
+<meta property="og:site_name" content="自信是成功的阶梯，自律是成长的保障。">
+<meta property="og:description" content="安装好了win10+Ubuntu系统，用Ubuntu搞开发，需要安装一些软件，但是Linux系统和Windows不一样，安装了软件后没有一个双击启动的.exe文件，这需要自己添加一个桌面的双击启动的标志，即标题的锁定到启动器，好了，这次不说废话，直接上我弄的步骤：在桌面右键，打开终端，运行 su root 命令，然后输入root的密码，转入到root下，这样对应后来有用，后面会提到。然后运行下面的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/2.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/3.jpg">
+<meta property="og:updated_time" content="2019-06-13T15:29:49.021Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux系统(Ubuntu 18.04 LTS)安装软件后锁定到启动器">
+<meta name="twitter:description" content="安装好了win10+Ubuntu系统，用Ubuntu搞开发，需要安装一些软件，但是Linux系统和Windows不一样，安装了软件后没有一个双击启动的.exe文件，这需要自己添加一个桌面的双击启动的标志，即标题的锁定到启动器，好了，这次不说废话，直接上我弄的步骤：在桌面右键，打开终端，运行 su root 命令，然后输入root的密码，转入到root下，这样对应后来有用，后面会提到。然后运行下面的">
+<meta name="twitter:image" content="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="自信是成功的阶梯，自律是成长的保障。" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://JadenFK.github.io/css/images/gxq.jpg">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>16</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/AboutLife" title="生活">
+            <li>生活</li>
+          </a>
+        
+          <a href="/AboutMe" title="关于">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" class="article-date">
+  <time class="post-time" datetime="2019-06-13T14:34:20.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br>
+    <span class="post-day">13</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux系统(Ubuntu 18.04 LTS)安装软件后锁定到启动器
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装好了win10+Ubuntu系统，用Ubuntu搞开发，需要安装一些软件，但是Linux系统和Windows不一样，安装了软件后没有一个双击启动的.exe文件，这需要自己添加一个桌面的双击启动的标志，即标题的锁定到启动器，好了，这次不说废话，直接上我弄的步骤：<br>在桌面右键，打开终端，运行</p>
+<p><table><td bgcolor="#000">su root</td> </table><br>命令，然后输入root的密码，转入到root下，这样对应后来有用，后面会提到。<br>然后运行下面的命令</p>
+<p><table><td bgcolor="#000">sudo gedit IntelliJIdea.desktop</td> </table><br>其中IntelliJIdea.desktop的.前面的时桌面图标的名称，即软件的名称。运行此命令后，会打开一个空白的编辑器，和Windows上的.txt差不多<br>在里面加上一些命令，即可，例如我的IntelliJ Idea的如下：<br><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png" alt="1"><br>其中要注意的就是Exec和Icon，/home后面要加上电脑的登录用户名<br>然后保存，退出<br>此时也可以不退出，点击上图的左上角的打开，其他文档，找到新建的IntelliJIdea.desktop,拖到桌面，双击运行即可，此时若是不能运行，就右键-属性-权限，把“允许作为程序执行文件选上”即可，这就是上面提到的为什么要转到root用户下，不是在电脑gxq2019用户下，因为会提示gxq2019权限不足。<br>安装Jdk,我安装的jdk版本时11.0.3，下载了以后直接解压缩就行，然后配置环境变量，参考如下：感谢博主<br><a href="https://blog.csdn.net/c4each/article/details/80584138" target="_blank" rel="noopener">https://blog.csdn.net/c4each/article/details/80584138</a><br>从第3步配置环境变量开始即可，右键-打开客户端，转到root用户下，执行命令，输入其代码，然后测试java -version<br>配置时发现，咦，jdk解压后没有jre,这需要自己安装，打开jdk的安装文件夹，即有bin的文件夹下，右键，打开客户端，执行下面的命令：</p>
+<p><table><td bgcolor="#000">sudo ./jlink –module-path jmods –add-modules java.desktop –output jre</td> </table><br>这时就会安装好jre,在jdk-11.0.3下就有了jre,可以配置环境变量了<br>jdk的环境变量也配置好了，开始运行刚才建立的启动器吧，结果报错如下</p>
+<p><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/2.png" alt="2"><br>解决办法：桌面，右键-打开客户端，运行下面的命令</p>
+<p><table><td bgcolor="#000">sudo vim /etc/environment</td> </table><br>发现，还没安装vim编辑器，现在安装，执行如下命令</p>
+<p><table><td bgcolor="#000">sudo apt-get install vim-gtk</td> </table><br>然后按照 <a href="https://www.cnblogs.com/mkdlf/p/8151522.html" target="_blank" rel="noopener">https://www.cnblogs.com/mkdlf/p/8151522.html</a> 博主所写，执行下面的命令</p>
+<p><table><td bgcolor="#000">sudo vim /etc/environment</td> </table><br>这是会打开这环境变量配置，这里需要了解一下vim编辑器的常用命令，打开后按i键，插入，可以编辑，然后按exc键是退出插入，按：号，输入w字母然后按Enter表示保存，输入wq是保存退出，即q表示退出。我这里是输入:wq，按Enter键即可。其中vim编辑器中输入代码如下</p>
+<p><table><td bgcolor="#000">JAVA_HOME=/home/gxq2019/software/jdk-11.0.3</td> </table><br>接着重启电脑，双击IntelliJIdea就可以打开了呀，至于破解软件，自己找度娘去吧</p>
+<p><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/3.jpg" alt="3"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjwutkg1b0000407k6v5gvou3" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">台式机装双系统(win10+Ubuntu).....恶心到死</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">自信是成功的阶梯，自律是成长的保障。</h1>
+    <h2 class="blog-subtitle">不要当父母需要你时，除了泪水一无所有；不要当爱人孩子需要你时，除了惭愧一无所有</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/AboutLife" title="生活">
+            <li>生活</li>
+          </a>
+        
+          <a href="/AboutMe" title="关于">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://JadenFK.github.io/css/images/gxq.jpg">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>16</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/JadenFK" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://www.cnblogs.com/baiboy/" target="_blank" title="baiboy">
+          baiboy
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/wxquare/p/5484636.html" target="_blank" title="特征工程">
+          特征工程
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 郭心全<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/aboutLife" title="" class="menuItem">生活</a>
+          
+            <a href="/aboutMe" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
