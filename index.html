@@ -109,13 +109,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>由于课题需要，要装Linux系统，一开始我坚持安装CentOS，因为本科用过一点，经过查询，了解到CentOS比较稳定，且企业用的比较多。但是经过和老师商讨决定用Ubuntu，因为Ubuntu的桌面做的比较好，且现在比较流行。<br>那就开始装吧！！！！！！<br>尼玛，由于自己的电脑是SSD+HDD，SSD是120G的，且已经装了windowS ,所以再再上面安装Linux系统不太显示，我的HDD是比较大，２T，但是个人觉得我们要搭建的平台要处理大数据，速度可能会有影响，所以想着再加一个SSD，老师又给买了一个SSD，240G的。<br>SSD买了，也加在电脑上了，开始装系统吧<br>噩梦开始了。。。。。。。。。<br>装Ubuntu<br>刚来到农大时，虚拟机用的Ubuntu16.04，这时一开始选择了Ubuntu19.04，同门发现有些包依赖比较严格，并且最新的系统对其他的支持不好，所以又改成了18.04.2 LTS<br>首先，给同门高霖汉在其台式机上直接把Windows换成Ubuntu，安装时选择的是清除Windows安装Ubuntu，但是安装好后，进入BIOS，发现有两个启动引导项，Windows还可以，不知道为什么也没在追。<br>在我台式机上安装Ubuntu18.04.2LTS，在新买的SSD上装好后进入BIOS找到了Ubuntu的启动项，进入后显示如下：<br><img src="http://JadenFK.github.io/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/1.png" alt="1"><br>装了几十次，每次换装的方法，就是grub,也百度了不少解决方案，如<a href="https://blog.csdn.net/ktony_90/article/details/78651975、https://blog.51cto.com/zgw285763054/1815208" target="_blank" rel="noopener">https://blog.csdn.net/ktony_90/article/details/78651975、https://blog.51cto.com/zgw285763054/1815208</a> 等，在此感谢提供这个问题的解决方案的博主们，虽说我的没解决，这问题也是一个电脑一个样<br>又查到了装双系统要用easyBCD我就下载了，结果不好使，又发现我的使UEFI，需要用easyUEFI，事实是装了后，BIOS里也找不到Ubuntu的启动项，进入win10打开easyUEFI也是添加不了Ubuntu的启动项。<br>这就捣鼓了两三天了，我靠，这可咋整。。。。。。<br>最后win10崩溃了，我直接装Ubuntu吧，不要双系统了，结果。。。。。。。。。。。。。还是不行。。。。。。。。。没有截图，意思大概是没有UEFI partition什么东西，醉了，单独装Ubuntu也不行，看这意思是有win10了就有UEFI partition，再装win10吧，。。。。。。。又把win10装上了，接着装Ubuntu呗，尼玛，直接装不了，什么win10的启动是传统的BIOS，不支持UEFI安装，这才发现，UEFI可以说是BIOS升级版，找了win10的信息，发现是传统的BIOS(信息是远哥找的，我竟没发现咋找到)，唉，又遇到坑了，win10左下角也没有搜索项，阉割过的Windows吧，又去官方下载win10制作启动盘，重新安装win10，这次不能再传统BIOS吧，这里提一句，传统的BIOS可以用easyBCD了，我也试了没成功，可能我太菜了。<br>装好新的win10后，发现机械盘坏了，被我删除分区了，。。。。。。。。。。识别不了了（我老多次进入winPE),真是醉了，重新分区吧，分区时还自动分了主分区什么的，启动保留什么的，然后接着重装Ubuntu，重启。。。。还是没启动项，这可咋办，进入win10，打开easyUEFI,添加启动项，嘿，机械盘里有个启动项。。。。。UEFI引导，还是Ubuntu，那就加上吧，重启试试，。。。。。。。。。。。。。尼玛还真有了。。。。。。。。。终于有了windows boot manager和Ubuntu两个启动项了，试试行不，。咦，win10和Ubuntu都能启动，都能用。。。。。。。好了。。。。。。。。。。。。。。。。真尼玛</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>首先分清传统的BIOS/MBR和UEFI／GPT，这里我重新装win10格式的C盘时GPT，机械盘也是GPT，装Ubuntu的固态也是GPT，必须一致，我一开始可能没注意可能导致了问题，这是其一。<br>其次，应该分区，自动分的主区有安装UEFI引导的地，不是我装Ubuntu时自己新建的/boot，这样选择装启动器时选择了这个固态或者/boot区都是不行的。个人根据最后突然能加启动项的推测。</p>
-
+        <p>由于课题需要，要装Linux系统，一开始我坚持安装CentOS，因为本科用过一点，经过查询，了解到CentOS比较稳定，且企业用的比较多。但是经过和老师商讨决定用Ubuntu，因为Ubuntu的桌面做的比较好，且现在比较流行。<br>那就开始装吧！！！！！！<br>尼玛，由于自己的电脑是SSD+HDD，SSD是120G的，且已经装了windowS ,所以再再上面安装Linux系统不太显示，我的HDD是比较大，２T，但是个人觉得我们要搭建的平台要处理大数据，速度可能会有影响，所以想着再加一个SSD，老师又给买了一个SSD，240G的。<br>SSD买了，也加在电脑上了，开始装系统吧<br>噩梦开始了。。。。。。。。。<br>装Ubuntu<br>刚来到农大时，虚拟机用的Ubuntu16.04，这时一开始选择了Ubuntu19.04，同门发现有些包依赖比较严格，并且最新的系统对其他的支持不好，所以又改成了18.04.2 LTS<br>首先，给同门高霖汉在其台式机上直接把Windows换成Ubuntu，安装时选择的是清除Windows安装Ubuntu，但是安装好后，进入BIOS，发现有两个启动引导项，Windows还可以，不知道为什么也没在追。<br>在我台式机上安装Ubuntu18.04.2LTS，在新买的SSD上装好后进入BIOS找到了Ubuntu的启动项，进入后显示如下：<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" data-id="cjwug509b000l4s7kmezla140" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" data-id="cjwug6koz000mbs7k8tp5a5hq" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/System/">System</a></li></ul>
@@ -170,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/由于改了电脑用户名，chrome碰到的坑/" data-id="cjwug509g000t4s7kj78pg8bp" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/02/由于改了电脑用户名，chrome碰到的坑/" data-id="cjwug6kp5000ubs7k4662fipo" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -225,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/chromedriver小坑/" data-id="cjwug5098000f4s7kx8lsto7b" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/02/chromedriver小坑/" data-id="cjwug6kox000ibs7kn8s3dsd5" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -280,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/06/“返回”按钮惹的“祸“祸”/" data-id="cjwug509a000j4s7kk55ldw43" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/06/“返回”按钮惹的“祸“祸”/" data-id="cjwug6kp0000obs7k36i3vcp4" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-easyUI/">JS/easyUI</a></li></ul>
@@ -335,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/03/HTTP-Status-500-Internal-Server-Error/" data-id="cjwug508s00054s7kz4755wvz" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/03/HTTP-Status-500-Internal-Server-Error/" data-id="cjwug6ko20000bs7ko9j6k2v8" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -390,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjwug508z00094s7kezmn65bj" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjwug6kog0007bs7kjip4ftla" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
@@ -445,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjwug508g00004s7ksxp8k91t" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjwug6kod0005bs7knl1c8wb5" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/">MySql</a></li></ul>
@@ -500,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" data-id="cjwug5092000c4s7kzvpl1k8b" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" data-id="cjwug6kos000ebs7kfwpjh5up" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -555,7 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/17/import了项目后eclipse第一次配置Tomcat/" data-id="cjwug5099000h4s7kg3dbdlk5" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/17/import了项目后eclipse第一次配置Tomcat/" data-id="cjwug6kop000cbs7kq7j9xud1" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -610,7 +613,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/" data-id="cjwug509f000r4s7kurropv5y" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/" data-id="cjwug6kp2000rbs7kaecq510l" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
