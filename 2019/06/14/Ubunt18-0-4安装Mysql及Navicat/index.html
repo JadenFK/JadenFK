@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Ubunt18.0.4安装Mysql及Navicat | 自信是成功的阶梯，自律是成长的保障。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Ubuntu安装MySql 5.7.26首先感谢百度经验：https://jingyan.baidu.com/article/6c67b1d64dbd7d2786bb1e6d.html 和首先我以为和Windows一样呢，在某个文件夹下安装MySQL就会安装在那，事实上我错了，我实在/home/gxq2019/software/mysql文件夹下打开的终端，然后转到的root用户，结果安装还是自动">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubunt18.0.4安装Mysql及Navicat">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/index.html">
+<meta property="og:site_name" content="自信是成功的阶梯，自律是成长的保障。">
+<meta property="og:description" content="Ubuntu安装MySql 5.7.26首先感谢百度经验：https://jingyan.baidu.com/article/6c67b1d64dbd7d2786bb1e6d.html 和首先我以为和Windows一样呢，在某个文件夹下安装MySQL就会安装在那，事实上我错了，我实在/home/gxq2019/software/mysql文件夹下打开的终端，然后转到的root用户，结果安装还是自动">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+<meta property="og:updated_time" content="2019-06-14T08:13:58.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubunt18.0.4安装Mysql及Navicat">
+<meta name="twitter:description" content="Ubuntu安装MySql 5.7.26首先感谢百度经验：https://jingyan.baidu.com/article/6c67b1d64dbd7d2786bb1e6d.html 和首先我以为和Windows一样呢，在某个文件夹下安装MySQL就会安装在那，事实上我错了，我实在/home/gxq2019/software/mysql文件夹下打开的终端，然后转到的root用户，结果安装还是自动">
+<meta name="twitter:image" content="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="自信是成功的阶梯，自律是成长的保障。" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://JadenFK.github.io/css/images/gxq.jpg">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>17</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/AboutLife" title="生活">
+            <li>生活</li>
+          </a>
+        
+          <a href="/AboutMe" title="关于">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Ubunt18-0-4安装Mysql及Navicat" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/" class="article-date">
+  <time class="post-time" datetime="2019-06-14T07:27:11.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubunt18.0.4安装Mysql及Navicat
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Ubuntu安装MySql 5.7.26<br>首先感谢百度经验：<a href="https://jingyan.baidu.com/article/6c67b1d64dbd7d2786bb1e6d.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/6c67b1d64dbd7d2786bb1e6d.html</a> 和<br>首先我以为和Windows一样呢，在某个文件夹下安装MySQL就会安装在那，事实上我错了，我实在/home/gxq2019/software/mysql文件夹下打开的终端，然后转到的root用户，结果安装还是自动</p>
+<h3 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h3><h4 id="1-右键打开客户端，运行下面的命令转到用户root下，其间需要输入root用户的密码"><a href="#1-右键打开客户端，运行下面的命令转到用户root下，其间需要输入root用户的密码" class="headerlink" title="1 右键打开客户端，运行下面的命令转到用户root下，其间需要输入root用户的密码"></a>1 右键打开客户端，运行下面的命令转到用户root下，其间需要输入root用户的密码</h4><table><td bgcolor="#000">su root</td> </table>
+
+<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="1"></p>
+<h4 id="2-运行代码-进行更新命令"><a href="#2-运行代码-进行更新命令" class="headerlink" title="2 运行代码,进行更新命令"></a>2 运行代码,进行更新命令</h4><table><td bgcolor="#000">sudo apt update</td> </table>
+
+<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="2"></p>
+<h4 id="3-更新完成后，查看一下MySql的服务状态"><a href="#3-更新完成后，查看一下MySql的服务状态" class="headerlink" title="3 更新完成后，查看一下MySql的服务状态"></a>3 更新完成后，查看一下MySql的服务状态</h4><table><td bgcolor="#000">sudo service mysql status</td> </table>
+
+<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="3"></p>
+<h4 id="4-查看mysql版本号、设置密码和远程登录"><a href="#4-查看mysql版本号、设置密码和远程登录" class="headerlink" title="4 查看mysql版本号、设置密码和远程登录"></a>4 查看mysql版本号、设置密码和远程登录</h4><table><td bgcolor="#000">sudo mysql   //查看MySQL版本号</td> </table><br><table><td bgcolor="#000">set password for ‘root‘@’localhost’ = password(‘root’)  //在mysql&gt;下输入设置密码</td> </table><br><table><td bgcolor="#000">GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root‘@’%’ IDENTIFIED BY ‘root’ WITH GRANT OPTION  //此root是上面的密码，设置允许远程登录</td> </table>
+
+<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="4"><br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="5"></p>
+<h4 id="5-更改MySQL的配置文件"><a href="#5-更改MySQL的配置文件" class="headerlink" title="5 更改MySQL的配置文件"></a>5 更改MySQL的配置文件</h4><p>在更改文件之前，先退出上面的mysql&gt;命令，输入exit;按enter键即可退出<br>然后关闭MySQL服务，执行下面的命令</p>
+<table><td bgcolor="#000">sudo service mysql stop</td> </table><br>接着，执行<br><table><td bgcolor="#000">sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf    //事先安装好vim</td> </table><br>就进入了vim编辑器，i:插入；esc:退出插入；:w是保存，:wq是保存退出；:q是退出<br>注释掉bind-address = 127.0.0.1即可，保存退出<br><br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="6"><br>#### 6 启动MySQL服务<br><table><td bgcolor="#000">sudo service mysql start</td> </table>
+
+<h4 id="7-远程测试"><a href="#7-远程测试" class="headerlink" title="7 远程测试"></a>7 远程测试</h4><p>IP地址在Ubuntu中查看即可，如下：<br>如果运行ifconfig找不到此命令，则没有net-tools工具，先下载，</p>
+<table><td bgcolor="#000">sudo apt-get install net-tools</td> </table><br><table><td bgcolor="#000">ifconfig</td> </table>
+
+<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="8"><br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="7"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/" data-id="cjwvtfvmh0008oo7k2n97ft5w" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Linux系统(Ubuntu 18.04 LTS)安装软件后锁定到启动器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">自信是成功的阶梯，自律是成长的保障。</h1>
+    <h2 class="blog-subtitle">不要当父母需要你时，除了泪水一无所有；不要当爱人孩子需要你时，除了惭愧一无所有</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/AboutLife" title="生活">
+            <li>生活</li>
+          </a>
+        
+          <a href="/AboutMe" title="关于">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://JadenFK.github.io/css/images/gxq.jpg">
+    <h2 class="author">郭心全</h2>
+    <h3 class="description">IT者，程序员，在读硕士研究生</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>17</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/JadenFK" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://www.cnblogs.com/baiboy/" target="_blank" title="baiboy">
+          baiboy
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/wxquare/p/5484636.html" target="_blank" title="特征工程">
+          特征工程
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 郭心全<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/aboutLife" title="" class="menuItem">生活</a>
+          
+            <a href="/aboutMe" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
