@@ -41,7 +41,7 @@
     <h2 class="author">郭心全</h2>
     <h3 class="description">IT者，程序员，在读硕士研究生</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>17</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>18</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>9</strong><br>标签</div></a>
     </div>
@@ -76,6 +76,64 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-Ubuntu-删除用户" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/19/Ubuntu-删除用户/" class="article-date">
+  <time class="post-time" datetime="2019-06-19T02:33:47.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br>
+    <span class="post-day">19</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/19/Ubuntu-删除用户/">Ubuntu 删除用户</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>装了Ubuntu系统还不熟悉，右上角的一个下三角下面，我账号下面的账号设置菜单里，解锁，把我的用户名后面的2019删掉了，确认，….尼玛多了个用户<br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="1"><br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="2"><br>这我有点强迫症啊，非得要删掉，在此感谢下面的博主<br><a href="https://blog.csdn.net/qq_33867131/article/details/86490083" target="_blank" rel="noopener">https://blog.csdn.net/qq_33867131/article/details/86490083</a>  <a href="https://blog.csdn.net/CAU_Ayao/article/details/83502880" target="_blank" rel="noopener">https://blog.csdn.net/CAU_Ayao/article/details/83502880</a><br>我多的用户是gxq，故要删除它<br>首先我的Ubuntu系统是18.04版本的desktop，桌面右键，打开终端，执行命令</p>
+<p><table><td bgcolor="#000">sudo userdel gxq</td> </table><br>然后删除/home下的gxq文件夹</p>
+<p><table><td bgcolor="#000">sudo rm -f /home/gxq</td> </table><br>然后博客上说，删除用户权限相关配置，即/etc/sudoers中的关于gxq用户的配置，否则无法在此创建同名用户<br>说实话我也看这个文件下的配置了，实在没看出来有啥单独关于gxq用户的配置，基本就是赋予普通用户的权限的，所以我没做此步骤，建议有的话删掉<br>接着，删除gxg用户的残留信息<br>首先转到home目录下</p>
+<p><table><td bgcolor="#000">cd /home</td> </table><br>查看/etc/passwd的关于gxq的配置，删掉</p>
+<p><table><td bgcolor="#000">cat /etc/passwd</td> </table><br>然后删除/etc/group下的关于gxq的配置，在这遇到了一个小小的坑，就是蓝色部分字体我也删了。。。。。。。类似于下图 </p>
+<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="1"><br>最后删除/var/spool/mail下的邮箱文件</p>
+<p><table><td bgcolor="#000">cd /var/spool/mail</td> </table></p>
+<p><table><td bgcolor="#000">rm -rf gxq</td> </table><br>Ok,Over!!!!!!!!!!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/19/Ubuntu-删除用户/" data-id="cjx2olv9k000fkk7k30d3zsax" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-Ubunt18-0-4安装Mysql及Navicat" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -121,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/" data-id="cjwvtn3c0000ico7kca5rg9v5" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/" data-id="cjx2olv9f000dkk7kqe6z1n87" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -178,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjwvtn3b90002co7kgtrez9qc" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjx2olv980009kk7kwah1nbot" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -233,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" data-id="cjwvtn3c5000rco7kkz2la438" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" data-id="cjx2olv9s000qkk7k6ld32u2v" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -288,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/由于改了电脑用户名，chrome碰到的坑/" data-id="cjwvtn3cb000zco7kcirdwsuu" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/02/由于改了电脑用户名，chrome碰到的坑/" data-id="cjx2olv9w000vkk7k7wrpllc0" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -343,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/chromedriver小坑/" data-id="cjwvtn3bv000eco7kon656w17" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/02/chromedriver小坑/" data-id="cjx2olv9m000hkk7kdke49lvu" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -398,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/06/“返回”按钮惹的“祸“祸”/" data-id="cjwvtn3c4000pco7kb3c4u713" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/06/“返回”按钮惹的“祸“祸”/" data-id="cjx2olv9p000lkk7k1aavqcin" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-easyUI/">JS/easyUI</a></li></ul>
@@ -453,7 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/03/HTTP-Status-500-Internal-Server-Error/" data-id="cjwvtn3b30000co7k3u1wevk1" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/03/HTTP-Status-500-Internal-Server-Error/" data-id="cjx2olv8z0005kk7k36nvapt2" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -508,7 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjwvtn3bd0005co7kl36fg95b" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjx2olv8i0000kk7k4jg6uxsh" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
@@ -563,65 +621,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjwvtn3bt000cco7kgvl6pdeo" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjx2olv8u0002kk7kml9itmq2" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/">MySql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-eclipse-hibernate逆向生成-java、Dao、-hbm-xml" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" class="article-date">
-  <time class="post-time" datetime="2019-01-17T09:16:13.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br>
-    <span class="post-day">17</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/">eclipse hibernate逆向生成.java、Dao、.hbm.xml</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>经过在集成环境intelliJ idea中用SSM框架写代码后，整的懵懵的，用过Mybatis逆向工程，挺烦人，没有在.xml中自己添加SQL语句，自我感觉能加，但是现在要用eclipse+SSH了。废话不说了，下面开始<br>首先是安装eclipse集成环境，这个网上有教程，在这不多说了。<br>安装好后，要安装Hibernate tools这个插件，help-&gt;Eclipse Marketplace，输入hibernate tools进行搜索，如下图：<br><img src="http://JadenFK.github.io/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/findHibernatetools.png" alt="findHibernatetools"><br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" data-id="cjwvtn3by000gco7kg286cxmc" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
 
     </footer>
   </div>
@@ -684,7 +687,7 @@
     <h2 class="author">郭心全</h2>
     <h3 class="description">IT者，程序员，在读硕士研究生</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>17</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>18</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>9</strong><br>标签</div></a>
     </div>
