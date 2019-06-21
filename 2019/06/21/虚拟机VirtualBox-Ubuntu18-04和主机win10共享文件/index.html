@@ -13,16 +13,16 @@
 <meta property="og:site_name" content="自信是成功的阶梯，自律是成长的保障。">
 <meta property="og:description" content="装双系统费劲吧，装虚拟机也费劲，真是干啥啥不中，吃啥啥不剩，装VMware 14/15  然后装Ubuntu18.04/16.04/18.01都不行，并且装了十几次，换成VirtualBox吧，5.1运行安装目录下的drivers/vboxdrv/VBoxDrv.inf,右键安装，重启还不行，只能狠心消耗自己的流量在官网上下载6.0.8了，还好皇天不负有心人，成了下面进行windows10和Ubu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg">
-<meta property="og:image" content="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg">
-<meta property="og:image" content="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/3.png">
-<meta property="og:image" content="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.png">
-<meta property="og:image" content="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/2.png">
-<meta property="og:updated_time" content="2019-06-21T14:14:31.880Z">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/1.jpg">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/2.jpg">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/3.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/1.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/2.png">
+<meta property="og:updated_time" content="2019-06-21T14:25:15.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟机VirtualBox Ubuntu18.04和主机win10共享文件">
 <meta name="twitter:description" content="装双系统费劲吧，装虚拟机也费劲，真是干啥啥不中，吃啥啥不剩，装VMware 14/15  然后装Ubuntu18.04/16.04/18.01都不行，并且装了十几次，换成VirtualBox吧，5.1运行安装目录下的drivers/vboxdrv/VBoxDrv.inf,右键安装，重启还不行，只能狠心消耗自己的流量在官网上下载6.0.8了，还好皇天不负有心人，成了下面进行windows10和Ubu">
-<meta name="twitter:image" content="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg">
+<meta name="twitter:image" content="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="自信是成功的阶梯，自律是成长的保障。" type="application/atom+xml">
   
@@ -116,13 +116,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>装双系统费劲吧，装虚拟机也费劲，真是干啥啥不中，吃啥啥不剩，装VMware 14/15  然后装Ubuntu18.04/16.04/18.01都不行，并且装了十几次，换成VirtualBox吧，5.1运行安装目录下的drivers/vboxdrv/VBoxDrv.inf,右键安装，重启还不行，只能狠心消耗自己的流量在官网上下载6.0.8了，还好皇天不负有心人，成了<br>下面进行windows10和Ubuntu虚拟机的文件夹共享，</p>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在主机(win10)D盘下新建一个文件夹Ubuntu-windows，当作共享文件夹的windows部分，且设置为固定分配，并且共享粘贴板什么的设置成双向<br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg" alt="1"><br><a id="more"></a><br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg" alt="2"><br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/3.png" alt="3"></p>
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>到新建的虚拟机系统下，这里以Master为例，菜单栏设备-安装增强功能…-运行,如下<br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.png" alt="1"><br>如果出现下图错误，则把上图那个光盘的图标，右键-弹出，然后设备-安装增强功能即可<br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/2.png" alt="2"></p>
+<h3 id="1-在win10下创建共享文件夹，并配置虚拟机"><a href="#1-在win10下创建共享文件夹，并配置虚拟机" class="headerlink" title="1 在win10下创建共享文件夹，并配置虚拟机"></a>1 在win10下创建共享文件夹，并配置虚拟机</h3><p>在主机(win10)D盘下新建一个文件夹Ubuntu-windows，当作共享文件夹的windows部分，且设置为固定分配，并且共享粘贴板什么的设置成双向<br><img src="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/1.jpg" alt="1"><br><a id="more"></a><br><img src="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/2.jpg" alt="2"><br><img src="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/3.png" alt="3"></p>
+<h3 id="2-对Uubntu虚拟机进行安装必要"><a href="#2-对Uubntu虚拟机进行安装必要" class="headerlink" title="2 对Uubntu虚拟机进行安装必要"></a>2 对Uubntu虚拟机进行安装必要</h3><p>到新建的虚拟机系统下，这里以Master为例，菜单栏设备-安装增强功能…-运行,如下<br><img src="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/1.png" alt="1"><br>如果出现下图错误，则把上图那个光盘的图标，右键-弹出，然后设备-安装增强功能即可<br><img src="http://JadenFK.github.io/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/2.png" alt="2"></p>
+<h3 id="3-在Ubuntu上创建共享文件夹，并且把win10和Ubuntu上共享文件夹连接起来"><a href="#3-在Ubuntu上创建共享文件夹，并且把win10和Ubuntu上共享文件夹连接起来" class="headerlink" title="3 在Ubuntu上创建共享文件夹，并且把win10和Ubuntu上共享文件夹连接起来"></a>3 在Ubuntu上创建共享文件夹，并且把win10和Ubuntu上共享文件夹连接起来</h3><p>右键-打开终端，转到root用户下，用命令su root,如果忘了密码，则运行sudo passwd root命令重置密码<br>然后执行下面命令，创建Ubuntu系统下的共享文件夹</p>
+<p><table><td bgcolor="#000">mkdir share   //share是Ubuntu系统/home/master/share,即Ubuntu系统下的共享文件夹</td> </table><br>接着把Windows和Ubuntu系统的文件夹联系起来，执行如下命令</p>
+<p><table><td bgcolor="#000">mount -t vboxsf Ubuntu-windows /home/master/share  //实际上我的master的共享文件夹建的/mnt/bdshare</td> </table><br>Ok，此刻在Windows上复制文件到Ubuntu-windows里，在Ubuntu的share文件夹下也可看到了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/" data-id="cjx66enmh0013707kr67e0on5" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/" data-id="cjx66sd260013lk7k3xhd3el4" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
