@@ -41,7 +41,7 @@
     <h2 class="author">郭心全</h2>
     <h3 class="description">IT者，程序员，在读硕士研究生</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>18</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>9</strong><br>标签</div></a>
     </div>
@@ -77,6 +77,62 @@
 
         <section id="main">
   
+    <article id="post-虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/" class="article-date">
+  <time class="post-time" datetime="2019-06-21T13:44:41.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br>
+    <span class="post-day">21</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/">虚拟机VirtualBox Ubuntu18.04和主机win10共享文件</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>装双系统费劲吧，装虚拟机也费劲，真是干啥啥不中，吃啥啥不剩，装VMware 14/15  然后装Ubuntu18.04/16.04/18.01都不行，并且装了十几次，换成VirtualBox吧，5.1运行安装目录下的drivers/vboxdrv/VBoxDrv.inf,右键安装，重启还不行，只能狠心消耗自己的流量在官网上下载6.0.8了，还好皇天不负有心人，成了<br>下面进行windows10和Ubuntu虚拟机的文件夹共享，</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在主机(win10)D盘下新建一个文件夹Ubuntu-windows，当作共享文件夹的windows部分，且设置为固定分配，并且共享粘贴板什么的设置成双向<br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg" alt="1"><br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/21/虚拟机VirtualBox-Ubuntu18-04和主机win10共享文件/" data-id="cjx66enmh0013707kr67e0on5" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-Ubuntu-删除用户" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/19/Ubuntu-删除用户/" class="article-date">
@@ -109,19 +165,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>装了Ubuntu系统还不熟悉，右上角的一个下三角下面，我账号下面的账号设置菜单里，解锁，把我的用户名后面的2019删掉了，确认，….尼玛多了个用户<br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="1"><br><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="2"><br>这我有点强迫症啊，非得要删掉，在此感谢下面的博主<br><a href="https://blog.csdn.net/qq_33867131/article/details/86490083" target="_blank" rel="noopener">https://blog.csdn.net/qq_33867131/article/details/86490083</a>  <a href="https://blog.csdn.net/CAU_Ayao/article/details/83502880" target="_blank" rel="noopener">https://blog.csdn.net/CAU_Ayao/article/details/83502880</a><br>我多的用户是gxq，故要删除它<br>首先我的Ubuntu系统是18.04版本的desktop，桌面右键，打开终端，执行命令</p>
-<p><table><td bgcolor="#000">sudo userdel gxq</td> </table><br>然后删除/home下的gxq文件夹</p>
-<p><table><td bgcolor="#000">sudo rm -f /home/gxq</td> </table><br>然后博客上说，删除用户权限相关配置，即/etc/sudoers中的关于gxq用户的配置，否则无法在此创建同名用户<br>说实话我也看这个文件下的配置了，实在没看出来有啥单独关于gxq用户的配置，基本就是赋予普通用户的权限的，所以我没做此步骤，建议有的话删掉<br>接着，删除gxg用户的残留信息<br>首先转到home目录下</p>
-<p><table><td bgcolor="#000">cd /home</td> </table><br>查看/etc/passwd的关于gxq的配置，删掉</p>
-<p><table><td bgcolor="#000">cat /etc/passwd</td> </table><br>然后删除/etc/group下的关于gxq的配置，在这遇到了一个小小的坑，就是蓝色部分字体我也删了。。。。。。。类似于下图 </p>
-<p><img src="http://JadenFK.github.io/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/1.png" alt="1"><br>最后删除/var/spool/mail下的邮箱文件</p>
-<p><table><td bgcolor="#000">cd /var/spool/mail</td> </table></p>
-<p><table><td bgcolor="#000">rm -rf gxq</td> </table><br>Ok,Over!!!!!!!!!!</p>
-
+        <p>装了Ubuntu系统还不熟悉，右上角的一个下三角下面，我账号下面的账号设置菜单里，解锁，把我的用户名后面的2019删掉了，确认，….尼玛多了个用户<br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/1.jpg" alt="1"><br><img src="http://JadenFK.github.io/2019/06/19/Ubuntu-删除用户/2.png" alt="2"><br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/19/Ubuntu-删除用户/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/19/Ubuntu-删除用户/" data-id="cjx2olv9k000fkk7k30d3zsax" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/19/Ubuntu-删除用户/" data-id="cjx66enl1000h707k3gfndndo" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -179,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/" data-id="cjx2olv9f000dkk7kqe6z1n87" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/14/Ubunt18-0-4安装Mysql及Navicat/" data-id="cjx66enkx000f707khvsizx8f" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -236,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjx2olv980009kk7kwah1nbot" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/13/Linux系统-Ubuntu-18-04-LTS-安装软件后锁定到启动器/" data-id="cjx66enju0001707kxbk96ncd" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -291,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" data-id="cjx2olv9s000qkk7k6ld32u2v" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/11/台式机装双系统-win10-Ubuntu-恶心到死/" data-id="cjx66enli000z707k1ylynoue" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -346,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/由于改了电脑用户名，chrome碰到的坑/" data-id="cjx2olv9w000vkk7k7wrpllc0" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/02/由于改了电脑用户名，chrome碰到的坑/" data-id="cjx66enmi0015707k7xr573f1" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -401,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/02/chromedriver小坑/" data-id="cjx2olv9m000hkk7kdke49lvu" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/02/chromedriver小坑/" data-id="cjx66enl9000p707kzii4ygxj" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -456,7 +509,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/06/“返回”按钮惹的“祸“祸”/" data-id="cjx2olv9p000lkk7k1aavqcin" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/06/“返回”按钮惹的“祸“祸”/" data-id="cjx66enlc000t707k0jbbtz02" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-easyUI/">JS/easyUI</a></li></ul>
@@ -511,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/03/HTTP-Status-500-Internal-Server-Error/" data-id="cjx2olv8z0005kk7k36nvapt2" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/03/HTTP-Status-500-Internal-Server-Error/" data-id="cjx66enkf0004707k435wrg8l" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -566,65 +619,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjx2olv8i0000kk7k4jg6uxsh" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjx66enks000c707kufla3p9o" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" class="article-date">
-  <time class="post-time" datetime="2019-03-02T01:58:17.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br>
-    <span class="post-day">02</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/">MySql远程连接，1045-Access denied for user &#39;root&#39;@&#39;DESKTOP-I7JQRSH&#39;(using password:YES)</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>开发个东西，老是碰到坑人的问题，这不MySql远程连接问题又来了<br>在进行MySql远程连接时，碰到了1045-Access denied for user ‘root‘@’DESKTOP-I7JQRSH’(using<br>password:YES),问题如下图<br><img src="https://JadenFK.github.io/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/1.png" alt="1"><br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjx2olv8u0002kk7kml9itmq2" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/">MySql</a></li></ul>
 
     </footer>
   </div>
@@ -687,7 +685,7 @@
     <h2 class="author">郭心全</h2>
     <h3 class="description">IT者，程序员，在读硕士研究生</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>18</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>9</strong><br>标签</div></a>
     </div>
