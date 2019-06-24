@@ -26,7 +26,8 @@
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/7.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/5.jpg">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.png">
-<meta property="og:updated_time" content="2019-06-24T08:11:53.648Z">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/9.png">
+<meta property="og:updated_time" content="2019-06-24T08:19:26.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VitualBox建三台虚拟机Ubuntu18.04试搭建Hadoop3.2+spark2.4">
 <meta name="twitter:description" content="由于条件限制，先在虚拟机上试安装Hadoop3.2+spark2.4安装虚拟机的心酸请看我另外一个博客：虚拟机VirtualBox-Ubuntu18.04和主机win10共享文件 里提到的这里装好了四台虚拟机，Master、Salver1、Slaver2、Slaver3，连接网络，结果四个虚拟机的Ip地址一样，这就尬了。找度娘要解决办法呗，首先修改了虚拟机网络的连接方式为：桥接网卡，如下">
@@ -137,13 +138,15 @@
 <h4 id="3-把电脑slaver1的authorized-keys拷贝到下个节点-slaver2-重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized-keys"><a href="#3-把电脑slaver1的authorized-keys拷贝到下个节点-slaver2-重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized-keys" class="headerlink" title="3  把电脑slaver1的authorized_keys拷贝到下个节点(slaver2)重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized_keys"></a>3  把电脑slaver1的authorized_keys拷贝到下个节点(slaver2)重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized_keys</h4><p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/3.jpg" alt="3"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/4.jpg" alt="4"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/7.png" alt="7"></p>
 <h4 id="4-把最终的slaver3的authorized-keys复制到master、slaver1、slaver2三台电脑上，Ok"><a href="#4-把最终的slaver3的authorized-keys复制到master、slaver1、slaver2三台电脑上，Ok" class="headerlink" title="4  把最终的slaver3的authorized_keys复制到master、slaver1、slaver2三台电脑上，Ok"></a>4  把最终的slaver3的authorized_keys复制到master、slaver1、slaver2三台电脑上，Ok</h4><p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/5.jpg" alt="5"></p>
 <h3 id="3-验证免密登录成功"><a href="#3-验证免密登录成功" class="headerlink" title="3 验证免密登录成功"></a>3 验证免密登录成功</h3><p>其中出现了”小插曲”,master连接slaver1、slaver2、slaver3都不行，需要输入密码，而三者连谁都行，不需要输入密码，然后百度找原因，有说authorized_keys的读写权限没有真的实现，要怎么怎么做，我去打开我的authorized_keys看了下，尼玛，两个slaver1的公钥，一个slaver2一个slaver3的公钥，没有master节点的公钥，明明第一个就加进去的master啊，咱也不知道，咱也不敢问，只能去打开master的id_rsa.pub，复制到每个电脑的authorized_keys里，Ok<br>还有就是警告：The authenticity of host 192.168.0.xxx can’t be established.<br>处理：打开/etc/ssh/ssh_config文件，在其后面加入下面两行代码，然后重启服务sshd</p>
-<p><table><td bgcolor="#000">sudo gedit /etc/ssh/ssh_config    //打开ssh_config文件</td></table><br>    StrictHostKeyChecking no<br>    UserKnownHostsFile /dev/null</p>
-<p><table><td bgcolor="#000">sudo service sshd restart  //重启sshd服务</td></table><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.png" alt="8"></p>
+<table><td bgcolor="#000">sudo gedit /etc/ssh/ssh_config    //打开ssh_config文件</td></table><br>    StrictHostKeyChecking no<br>    UserKnownHostsFile /dev/null<br><table><td bgcolor="#000">sudo service sshd restart  //重启sshd服务</td></table>
 
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.png" alt="8"></p>
+<h2 id="第三步-安装JDK环境"><a href="#第三步-安装JDK环境" class="headerlink" title="第三步 安装JDK环境"></a>第三步 安装JDK环境</h2><p>下载JDK，我的是JDK11，解压到要安装的文件夹下，解压后就可以用了，不过要配置环境变量，在/etc/profile文件末尾加上如下代码<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/9.png" alt="9"><br>代码意义请百度，有很多的教程</p>
+<h2 id="第四步-安装Hadoop"><a href="#第四步-安装Hadoop" class="headerlink" title="第四步 安装Hadoop"></a>第四步 安装Hadoop</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxa3j0e6000lrk7k2e12424j" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxa41c86000iv87k8rk36zuy" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li></ul>
