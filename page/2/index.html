@@ -41,9 +41,9 @@
     <h2 class="author">郭心全</h2>
     <h3 class="description">IT者，程序员，在读硕士研究生</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>10</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -76,6 +76,61 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" class="article-date">
+  <time class="post-time" datetime="2019-03-02T03:00:29.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br>
+    <span class="post-day">02</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/">Mybatis 多表连接异常 There is no getter for property named &#39;vg_province_production&#39; in &#39;com.edu.cau.orm.VgProvinceProduction&#39;</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>进行Mybatis夺表查询时，使用了association,具体使用如下：<br><img src="https://JadenFK.github.io/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/1.png" alt="1"><br>结果出现了异常：There is no getter for property named ‘vg_province_production’<br>in ‘com.edu.cau.orm.VgProvinceProduction’，在谷歌上搜索时找了好多，错误都和我不一样，有的让在Mapper接口中加@Param(…),而我的是一个表的属性，我一直认为这是表在数据库中的名，其实这是一个属性，在加<association>的表对应的实体类中定义，如：我用了vg_basic_info和vg_province_production两张表，要在vg_basic_info中使用vg_province_production，我就在vg_basic_info的.xml文件中添加association把vg_province_production的属性加过来，如上图所示，但是出现了此次异常<br>解决办法：<br></association></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/02/Mybatis-多表连接异常-There-is-no-getter-for-property-named-vg-province-production-in-com-edu-cau-orm-VgProvinceProduction/" data-id="cjx9pfqj200050o7kl4iqc83i" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -118,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjx66sd1f0005lk7ktixdut80" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/03/02/MySql远程连接，1045-Access-denied-for-user-root-DESKTOP-I7JQRSH-using-password-YES/" data-id="cjx9pfqix00030o7kg4nzt5iy" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/">MySql</a></li></ul>
@@ -173,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" data-id="cjx66sd1x000olk7kelveq6p4" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/17/eclipse-hibernate逆向生成-java、Dao、-hbm-xml/" data-id="cjx9pfqjf000m0o7kym53vd8c" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -228,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/17/import了项目后eclipse第一次配置Tomcat/" data-id="cjx66sd1w000llk7kyh9kasdr" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/17/import了项目后eclipse第一次配置Tomcat/" data-id="cjx9pfqjd000j0o7k266ekumo" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -283,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/" data-id="cjx66sd240010lk7kuvta6zsx" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/15/整MyBatis逆向工程时遇见一个气死人的小问题/" data-id="cjx9pfqjl000y0o7k51y5sfwj" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
@@ -339,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/Tomcat-端口占用问题/" data-id="cjx66sd1o000alk7k1a7g9lts" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/01/08/Tomcat-端口占用问题/" data-id="cjx9pfqj400080o7kvpaabbpj" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -396,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-id="cjx66sd1l0007lk7k8y5wg04i" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/27/SVN的搭建/" data-id="cjx9pfqiz00040o7k0hyibk7g" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制工具/">版本控制工具</a></li></ul>
@@ -453,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/22/在Github上速搭建你自己的博客，让自己拥有一个网站吧/" data-id="cjx66sd20000rlk7km78sh1u1" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/22/在Github上速搭建你自己的博客，让自己拥有一个网站吧/" data-id="cjx9pfqjj000u0o7k9grmit0g" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -510,7 +565,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/22/搭建博客问题总结/" data-id="cjx66sd21000ulk7k6z9zpcj3" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/22/搭建博客问题总结/" data-id="cjx9pfqjk000w0o7k9il30jv1" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -568,7 +623,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/hello-world/" data-id="cjx66sd1v000jlk7ktsyebp0m" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/12/19/hello-world/" data-id="cjx9pfqji000s0o7krwc6idhi" class="article-share-link">分享</a>
       
       
     </footer>
@@ -632,9 +687,9 @@
     <h2 class="author">郭心全</h2>
     <h3 class="description">IT者，程序员，在读硕士研究生</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>10</strong><br>标签</div></a>
     </div>
 
 
