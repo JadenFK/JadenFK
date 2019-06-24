@@ -15,7 +15,10 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/1.jpg">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/1.png">
-<meta property="og:updated_time" content="2019-06-24T02:50:06.889Z">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/2.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/3.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/4.png">
+<meta property="og:updated_time" content="2019-06-24T06:57:18.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VitualBox建三台虚拟机Ubuntu18.04试搭建Hadoop3.2+spark2.4">
 <meta name="twitter:description" content="由于条件限制，先在虚拟机上试安装Hadoop3.2+spark2.4安装虚拟机的心酸请看我另外一个博客：虚拟机VirtualBox-Ubuntu18.04和主机win10共享文件 里提到的这里装好了四台虚拟机，Master、Salver1、Slaver2、Slaver3，连接网络，结果四个虚拟机的Ip地址一样，这就尬了。找度娘要解决办法呗，首先修改了虚拟机网络的连接方式为：桥接网卡，如下">
@@ -114,13 +117,17 @@
       
         <p>由于条件限制，先在虚拟机上试安装Hadoop3.2+spark2.4<br>安装虚拟机的心酸请看我另外一个博客：虚拟机VirtualBox-Ubuntu18.04和主机win10共享文件 里提到的<br>这里装好了四台虚拟机，Master、Salver1、Slaver2、Slaver3，连接网络，结果四个虚拟机的Ip地址一样，这就尬了。找度娘要解决办法呗，首先修改了虚拟机网络的连接方式为：桥接网卡，如下<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/1.jpg" alt="1"><br><a id="more"></a><br>然后接着捣鼓修改Ip地址。。。。。。然后晚上就玩了，没干，第二天打开电脑查看IP地址发现不一样了，个人推测：网络连接方式改为桥接网卡，然后重启虚拟机或本机电脑-再打开虚拟机，就会使虚拟机的ip地址不一样</p>
 <h3 id="第一步-配置hosts"><a href="#第一步-配置hosts" class="headerlink" title="第一步 配置hosts"></a>第一步 配置hosts</h3><p>在每个节点(即每台虚拟机上)修改hosts文件，运行以下命令</p>
-<table><td bgcolor="#000">sudo gedit /etc/hosts     //会打开hosts文件</td> </table><br>在其后面加上每个节点的Ip地址，如下<br><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/1.png" alt="1"><br>### 第二步 设置SSH免密登录<br>SSH是secure shell的缩写，是一种创建在应用层和传输层基础上的安全协议。<br>#### 1 为每个节点安装SSH<br><table><td bgcolor="#000">sudo apt-get install openssh-server    //安装SSH</td> </table>
+<table><td bgcolor="#000">sudo gedit /etc/hosts     //会打开hosts文件</td> </table><br>在其后面加上每个节点的Ip地址，如下<br><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/1.png" alt="1"><br>### 第二步 设置SSH免密登录<br>感谢作者 <a href="https://www.linuxidc.com/Linux/2019-02/156882.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2019-02/156882.htm</a> 和博主 <a href="https://www.cnblogs.com/benfly/p/8117894.html" target="_blank" rel="noopener">https://www.cnblogs.com/benfly/p/8117894.html</a><br>SSH是secure shell的缩写，是一种创建在应用层和传输层基础上的安全协议。<br>#### 1 为每个节点安装SSH<br><table><td bgcolor="#000">sudo apt-get install openssh-server    //安装SSH</td> </table><br>查看是否安装成功<br><table><td bgcolor="#000">ps -e|grep ssh  或者  ssh -V   //安装SSH</td> </table>
 
-<h4 id="2-为每个节点生成ssh密钥"><a href="#2-为每个节点生成ssh密钥" class="headerlink" title="2 为每个节点生成ssh密钥"></a>2 为每个节点生成ssh密钥</h4>
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/2.png" alt="2"></p>
+<h4 id="2-为每个节点生成ssh密钥"><a href="#2-为每个节点生成ssh密钥" class="headerlink" title="2 为每个节点生成ssh密钥"></a>2 为每个节点生成ssh密钥</h4><p><table><td bgcolor="#000">ssh-keygen -t rsa    //生成ssh密钥</td> </table><br>一路回车直至结束，会在主目录(/home/Master，master是Ubuntu系统用户名)下生成一个.ssh文件夹，其中包含id_rsa、id_rsa.pub两个文件，如下</p>
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/3.png" alt="3"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/4.png" alt="4"><br>如果在主目录下找不到.ssh，就点击上图的右上角的三个横杠，然后选择显示隐藏文件(H)即可</p>
+<p>#### </p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjx9sa3mc000e787k30riub4b" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxa13rg7000dh07k1niff3mg" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li></ul>
