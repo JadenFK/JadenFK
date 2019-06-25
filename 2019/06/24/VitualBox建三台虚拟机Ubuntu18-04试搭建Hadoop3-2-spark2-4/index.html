@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/6.jpg">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/10.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/11.png">
-<meta property="og:updated_time" content="2019-06-24T14:46:23.475Z">
+<meta property="og:updated_time" content="2019-06-25T01:16:48.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VitualBox建三台虚拟机Ubuntu18.04试搭建Hadoop3.2+spark2.4">
 <meta name="twitter:description" content="由于条件限制，先在虚拟机上试安装Hadoop3.2+spark2.4安装虚拟机的心酸请看我另外一个博客：虚拟机VirtualBox-Ubuntu18.04和主机win10共享文件 里提到的这里装好了四台虚拟机，Master、Salver1、Slaver2、Slaver3，连接网络，结果四个虚拟机的Ip地址一样，这就尬了。找度娘要解决办法呗，首先修改了虚拟机网络的连接方式为：桥接网卡，如下">
@@ -149,12 +149,12 @@
 <table><td bgcolor="#000">mv -v /home/master/software/hadoop-3.2.0 /usr/local/hadoop</td></table>
 
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/6.jpg" alt="6"></p>
-<h3 id="配置Hadoop环境变量"><a href="#配置Hadoop环境变量" class="headerlink" title="配置Hadoop环境变量"></a>配置Hadoop环境变量</h3><p>配置的JDK环境变量不变，如下<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/10.png" alt="10"><br>配置Hadoop环境变量，在JDK的环境变量下面添加即可<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/11.png" alt="11"><br>可我看的书(Python+Spark2.0+Hadoop机器学习与大数据实战 林大贵著)上说是：运行Hadoop必须设置很多环境变量，可是如果每次登录时都必须重新设置就会很麻烦，因此我们可以在~/.bashrc文件中设置每次登录时都会自动运行一次环境变量设置。<br>我懵懵的，人家都在/etc/profile里设置，可他在~/.bashrc中设置，还有充分的理由，虽说我没太看懂这理由。然后百度了一下，说是<br>    在/etc/profile中配置的环境变量只会在会话开始读取一次<br>    而在/etc/bashrc中配置的环境变量则每次打开终端都会读取<br>我懂了，就是在/etc/profile文件中配置会出现问题，那我也写在/etc/bashrc中得了，还是书中自有黄金屋啊</p>
+<h3 id="配置Hadoop环境变量"><a href="#配置Hadoop环境变量" class="headerlink" title="配置Hadoop环境变量"></a>配置Hadoop环境变量</h3><p>配置的JDK环境变量不变，如下<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/10.png" alt="10"><br>配置Hadoop环境变量，在JDK的环境变量下面添加即可<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/11.png" alt="11"><br>可我看的书(Python+Spark2.0+Hadoop机器学习与大数据实战 林大贵著)上说是：运行Hadoop必须设置很多环境变量，可是如果每次登录时都必须重新设置就会很麻烦，因此我们可以在~/.bashrc文件中设置每次登录时都会自动运行一次环境变量设置。<br>我懵懵的，人家都在/etc/profile里设置，可他在~/.bashrc中设置，还有充分的理由，虽说我没太看懂这理由。然后百度了一下，说是<br>    在/etc/profile中配置的环境变量只会在会话开始读取一次<br>    而在/etc/bashrc中配置的环境变量则每次打开终端都会读取<br>我懂了，就是在/etc/profile文件中配置会出现问题，那我也写在/etc/bashrc中得了，还是书中自有黄金屋啊，书中代码，即我写入~/.bashrc的代码<br>    xport JAVA_HOME=/home/master/software/jdk-11.0.3<br>    export HADOOP_HOME=/usr/local/hadoop<br>    export PATH=$PATH:$HADOOP_HOME/bin<br>    export PATH=$PATH:$HADOOP_HOME/sbin<br>    export HADOOP_MAPRED_HOME=$HADOOP_HOME<br>    export HADOOP_COMMON_HOME=$HADOOP_HOME<br>    export HADOOP_HDFS_HOME=$HADOOP_HOME<br>    export YARN_HOME=$HADOOP_HOME<br>    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native<br>    export HADOOP_OPTS=”-Djava.library.path=$HADOOP_HOME/lib”<br>    export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native:$JAVA_LIBRARY_PATH<br>    export PATH=$JAVA_HOME/bin:$PATH</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxahv23j000hkg7kck3hepf1" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxb4e8w3001eic7k6y8vx25i" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li></ul>
