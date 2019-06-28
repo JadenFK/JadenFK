@@ -25,6 +25,9 @@
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/4.jpg">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/7.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/5.jpg">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/16.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/7.jpg">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/18.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/9.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/6.jpg">
@@ -32,9 +35,19 @@
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/11.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/12.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/13.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/17.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/14.png">
 <meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/15.png">
-<meta property="og:updated_time" content="2019-06-25T06:31:30.654Z">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/19.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.jpg">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/20.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/21.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/9.jpg">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/21.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/23.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/24.png">
+<meta property="og:image" content="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/25.png">
+<meta property="og:updated_time" content="2019-06-28T06:38:36.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VitualBox建三台虚拟机Ubuntu18.04试搭建Hadoop3.2+spark2.4">
 <meta name="twitter:description" content="由于条件限制，先在虚拟机上试安装Hadoop3.2+spark2.4安装虚拟机的心酸请看我另外一个博客：虚拟机VirtualBox-Ubuntu18.04和主机win10共享文件 里提到的这里装好了四台虚拟机，Master、Salver1、Slaver2、Slaver3，连接网络，结果四个虚拟机的Ip地址一样，这就尬了。找度娘要解决办法呗，首先修改了虚拟机网络的连接方式为：桥接网卡，如下">
@@ -144,7 +157,10 @@
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/2.jpg" alt="2"><br>登录slaver1电脑查看是否拷贝过来了，然后把slaver1节点的ssh密钥加入到authorized_keys中去<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/6.png" alt="6"></p>
 <h4 id="3-把电脑slaver1的authorized-keys拷贝到下个节点-slaver2-重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized-keys"><a href="#3-把电脑slaver1的authorized-keys拷贝到下个节点-slaver2-重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized-keys" class="headerlink" title="3  把电脑slaver1的authorized_keys拷贝到下个节点(slaver2)重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized_keys"></a>3  把电脑slaver1的authorized_keys拷贝到下个节点(slaver2)重复上面两步，接着slaver2拷贝到slaver3，把slaver3的ssh密钥加到authorized_keys</h4><p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/3.jpg" alt="3"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/4.jpg" alt="4"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/7.png" alt="7"></p>
 <h4 id="4-把最终的slaver3的authorized-keys复制到master、slaver1、slaver2三台电脑上，Ok"><a href="#4-把最终的slaver3的authorized-keys复制到master、slaver1、slaver2三台电脑上，Ok" class="headerlink" title="4  把最终的slaver3的authorized_keys复制到master、slaver1、slaver2三台电脑上，Ok"></a>4  把最终的slaver3的authorized_keys复制到master、slaver1、slaver2三台电脑上，Ok</h4><p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/5.jpg" alt="5"></p>
-<h3 id="3-验证免密登录成功"><a href="#3-验证免密登录成功" class="headerlink" title="3 验证免密登录成功"></a>3 验证免密登录成功</h3><p>其中出现了”小插曲”,master连接slaver1、slaver2、slaver3都不行，需要输入密码，而三者连谁都行，不需要输入密码，然后百度找原因，有说authorized_keys的读写权限没有真的实现，要怎么怎么做，我去打开我的authorized_keys看了下，尼玛，两个slaver1的公钥，一个slaver2一个slaver3的公钥，没有master节点的公钥，明明第一个就加进去的master啊，咱也不知道，咱也不敢问，只能去打开master的id_rsa.pub，复制到每个电脑的authorized_keys里，Ok<br>还有就是警告：The authenticity of host 192.168.0.xxx can’t be established.<br>处理：打开/etc/ssh/ssh_config文件，在其后面加入下面两行代码，然后重启服务sshd</p>
+<h3 id="3-验证免密登录成功"><a href="#3-验证免密登录成功" class="headerlink" title="3 验证免密登录成功"></a>3 验证免密登录成功</h3><p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/16.png" alt="16"><br>此时登录需要ssh slaver1@Slaver1 即ssh  要登陆的主机的用户名@要登陆的主机名，若想直接ssh Slaver1 即ssh 要登陆的主机名则需要修改.ssh/config,若没有新建一个，如下</p>
+<table><td bgcolor="#000">sudo gedit .ssh/config </td></table>
+
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/7.jpg" alt="7"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/18.png" alt="18"><br>其中出现了”小插曲”,master连接slaver1、slaver2、slaver3都不行，需要输入密码，而三者连谁都行，不需要输入密码，然后百度找原因，有说authorized_keys的读写权限没有真的实现，要怎么怎么做，我去打开我的authorized_keys看了下，尼玛，两个slaver1的公钥，一个slaver2一个slaver3的公钥，没有master节点的公钥，明明第一个就加进去的master啊，咱也不知道，咱也不敢问，只能去打开master的id_rsa.pub，复制到每个电脑的authorized_keys里，Ok<br>还有就是警告：The authenticity of host 192.168.0.xxx can’t be established.<br>处理：打开/etc/ssh/ssh_config文件，在其后面加入下面两行代码，然后重启服务sshd</p>
 <table><td bgcolor="#000">sudo gedit /etc/ssh/ssh_config    //打开ssh_config文件</td></table><br>    StrictHostKeyChecking no<br>    UserKnownHostsFile /dev/null<br><table><td bgcolor="#000">sudo service sshd restart  //重启sshd服务</td></table>
 
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.png" alt="8"></p>
@@ -154,24 +170,47 @@
 
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/6.jpg" alt="6"></p>
 <h3 id="配置Hadoop环境变量"><a href="#配置Hadoop环境变量" class="headerlink" title="配置Hadoop环境变量"></a>配置Hadoop环境变量</h3><p>配置的JDK环境变量不变，如下<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/10.png" alt="10"><br>配置Hadoop环境变量，在JDK的环境变量下面添加即可<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/11.png" alt="11"><br>可我看的书(Python+Spark2.0+Hadoop机器学习与大数据实战 林大贵著)上说是：运行Hadoop必须设置很多环境变量，可是如果每次登录时都必须重新设置就会很麻烦，因此我们可以在~/.bashrc文件中设置每次登录时都会自动运行一次环境变量设置。<br>我懵懵的，人家都在/etc/profile里设置，可他在~/.bashrc中设置，还有充分的理由，虽说我没太看懂这理由。然后百度了一下，说是<br>    在/etc/profile中配置的环境变量只会在会话开始读取一次<br>    而在/etc/bashrc中配置的环境变量则每次打开终端都会读取<br>我懂了，就是在/etc/profile文件中配置会出现问题，那我也写在/etc/bashrc中得了，还是书中自有黄金屋啊，书中代码，即我写入~/.bashrc的代码<br>    export JAVA_HOME=/home/master/software/jdk-11.0.3<br>    export HADOOP_HOME=/usr/local/hadoop<br>    export PATH=$PATH:$HADOOP_HOME/bin<br>    export PATH=$PATH:$HADOOP_HOME/sbin<br>    export HADOOP_MAPRED_HOME=$HADOOP_HOME<br>    export HADOOP_COMMON_HOME=$HADOOP_HOME<br>    export HADOOP_HDFS_HOME=$HADOOP_HOME<br>    export YARN_HOME=$HADOOP_HOME<br>    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native<br>    export HADOOP_OPTS=”-Djava.library.path=$HADOOP_HOME/lib”<br>    export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native:$JAVA_LIBRARY_PATH<br>    export PATH=$JAVA_HOME/bin:$PATH</p>
-<h2 id="第五步-修改usr-local-hadoop-etc-Hadoop下的Hadoop-env-sh、core-site-xml、hdfs-site-xml、mapred-site-xml、workers、yarn-site-xml六个"><a href="#第五步-修改usr-local-hadoop-etc-Hadoop下的Hadoop-env-sh、core-site-xml、hdfs-site-xml、mapred-site-xml、workers、yarn-site-xml六个" class="headerlink" title="第五步 修改usr/local/hadoop/etc/Hadoop下的Hadoop-env.sh、core-site.xml、hdfs-site.xml、mapred-site.xml、workers、yarn-site.xml六个"></a>第五步 修改usr/local/hadoop/etc/Hadoop下的Hadoop-env.sh、core-site.xml、hdfs-site.xml、mapred-site.xml、workers、yarn-site.xml六个</h2><p>我在博客上看到的都说是五个配置文件修改，有的少了yarn-site.xml有的少了hdoop-env.sh，这里我都配置一下，万一用到了其功能呢。但是还是要感谢博主和作者<br><a href="https://www.cnblogs.com/caiyisen/p/7373512.html" target="_blank" rel="noopener">https://www.cnblogs.com/caiyisen/p/7373512.html</a>  <a href="https://blog.csdn.net/u014636511/article/details/80171002" target="_blank" rel="noopener">https://blog.csdn.net/u014636511/article/details/80171002</a>  <a href="https://www.cnblogs.com/laov/p/3421479.html" target="_blank" rel="noopener">https://www.cnblogs.com/laov/p/3421479.html</a><br>hadoop-env.sh     添加Java安装的地址</p>
-<table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/hadoop-env.sh</td></table><br>export JAVA_HOME=/home/slaver2/softwarek-11.0.3<br>core-site.xml    fs.default.name：设置HDFS的默认名称   hadoop.tmp.dir：设置一个临时目录，用来存放每次运行的作业job的信息（书上没设置）<br><table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/core-site.xml</td></table>
+<h2 id="第五步-修改usr-local-hadoop-etc-Hadoop下的Hadoop-env-sh、core-site-xml、hdfs-site-xml、mapred-site-xml、workers、yarn-site-xml六个"><a href="#第五步-修改usr-local-hadoop-etc-Hadoop下的Hadoop-env-sh、core-site-xml、hdfs-site-xml、mapred-site-xml、workers、yarn-site-xml六个" class="headerlink" title="第五步 修改usr/local/hadoop/etc/Hadoop下的Hadoop-env.sh、core-site.xml、hdfs-site.xml、mapred-site.xml、workers、yarn-site.xml六个"></a>第五步 修改usr/local/hadoop/etc/Hadoop下的Hadoop-env.sh、core-site.xml、hdfs-site.xml、mapred-site.xml、workers、yarn-site.xml六个</h2><p>首先，每台虚拟机都要配置这几个文件，我在博客上看到的都说是五个配置文件修改，有的少了yarn-site.xml有的少了hdoop-env.sh，这里我都配置一下，万一用到了其功能呢。但是还是要感谢博主和作者<br><a href="https://www.cnblogs.com/caiyisen/p/7373512.html" target="_blank" rel="noopener">https://www.cnblogs.com/caiyisen/p/7373512.html</a>  <a href="https://blog.csdn.net/u014636511/article/details/80171002" target="_blank" rel="noopener">https://blog.csdn.net/u014636511/article/details/80171002</a>  <a href="https://www.cnblogs.com/laov/p/3421479.html" target="_blank" rel="noopener">https://www.cnblogs.com/laov/p/3421479.html</a><br>hadoop-env.sh     添加Java安装的地址</p>
+<table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/hadoop-env.sh</td></table><br>export JAVA_HOME=/home/master/software/jdk-11.0.3<br>core-site.xml    fs.default.name：设置HDFS的默认名称   hadoop.tmp.dir：设置一个临时目录，用来存放每次运行的作业job的信息（书上没设置）<br><table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/core-site.xml</td></table>
 
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/12.png" alt="12"><br>hdfs-site.xml  dfs.replication:设置blocks副本数量，dfs.master.dir：设置master数据存储目录,会在master主机上创建，dfs.slaver.dir：设置slaver数据存储目录，会在slaver1、slaver2、slaver3从机上都创建</p>
 <table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/hdfs-site.xml</td></table>
 
-<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/13.png" alt="13"><br>mapred-site.xml  mapreduce.framework.name:设置mapreduce的框架为yarn</p>
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/13.png" alt="13"><br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/17.png" alt="17"><br>mapred-site.xml  mapreduce.framework.name:设置mapreduce的框架为yarn</p>
 <table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/mapred-site.xml</td></table>
 
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/14.png" alt="14"><br>yarn-site.xml</p>
 <table><td bgcolor="#000">sudo gedit /usr/local/hadoop/etc/hadoop/mapred-site.xml</td></table>
 
 <p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/15.png" alt="15"></p>
+<p>workers  把三天从机的主机名加进来即可</p>
+<p>格式化namenode，并且启动集群</p>
+<table><td bgcolor="#000">hadoop namenode -format     //格式化namenode</td></table>
+
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/19.png" alt="19"><br>启动集群，下面是一些启动的命令，</p>
+<p><table><td bgcolor="#000">start-all.sh //启动所有Hadoop守护进程，有NameNode、SecondaryNameNode、DataNode、ResourceManager、NodeManager</td></table></p>
+<p><table><td bgcolor="#000">stop-all.sh     //停止所有的Hadoop守护进程，即start-all.sh开启的</td></table></p>
+<p><table><td bgcolor="#000">start-dfs.sh     //启动Hadoop HDFS守护进程，有NameNode、SecondaNameNode、DataNode</td></table></p>
+<p><table><td bgcolor="#000">stop-dfs.sh     //停止Hadoop HDFS守护进程</td></table></p>
+<p><table><td bgcolor="#000">hdfs –daemon start namenode     //单独启动namenode进程</td></table></p>
+<p><table><td bgcolor="#000">hdfs –daemon stop namenode    //单独停止namenode进程</td></table></p>
+<p><table><td bgcolor="#000">hdfs –daemon start datanode     //单独启动datanode</td></table></p>
+<p><table><td bgcolor="#000">hdfs –daemon stop datanode     //单独停止datanode</td></table></p>
+<p><table><td bgcolor="#000">hdfs –daemon start secondarynamenode     //单独启动secondarynamenode</td></table></p>
+<p><table><td bgcolor="#000">hdfs –daemon stop secondarynamenode   //单独停止secondarynamenode</td></table></p>
+<p><table><td bgcolor="#000">start-yarn.sh     //启动ResourceManager、nodeManager进程</td></table></p>
+<p><table><td bgcolor="#000">stop-yarn.sh     //停止ResourceManager、nodeManager进程</td></table></p>
+<p><table><td bgcolor="#000">yarn -daemon start resourcemanager     //单独启动ResourceManager进程</td></table></p>
+<p><table><td bgcolor="#000">yarn -daemon stop resourcemanager     //单独停止ResourceManager进程</td></table></p>
+<p><table><td bgcolor="#000">yarn -daemon start nodemanager  //单独启动nodeManager进程</td></table></p>
+<p><table><td bgcolor="#000">yarn -daemon stop nodemanager     //单独停止nodeManager进程</td></table><br>版本2的有所不同，请看下面的博客，感谢博主 <a href="https://www.cnblogs.com/xym4869/p/8821312.html" target="_blank" rel="noopener">https://www.cnblogs.com/xym4869/p/8821312.html</a><br>修改start-dfs.sh、start-yarn.sh、stop-dfs.sh、stop-yarn.sh<br>这一步不用修改了，在百度上有的修改是因为一开始配置Hadoop都是用的root用户，所以需要在start-dfs.sh和stop-dfs.sh前面加上<br>HDFS_DATANODE_USER=root<br>HADOOP_SECURE_DN_USER=hdfs<br>HDFS_NAMENODE_USER=root<br>HDFS_SECONDARYNAMENODE_USER=root<br>在start-yarn.sh和stop-yarn.sh前面加上<br>YARN_RESOURCEMANAGER_USER=root<br>HADOOP_SECURE_DN_USER=yarn<br>YARN_NODEMANAGER_USER=root<br>结果start-all.sh后，没有ResourceManager、NodeManager进程，急死了，搞了好长时间，去查看日志，发现</p>
+<p><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/8.jpg" alt="8"><br>百度到原因，JDK版本太高，某些java的API被禁什么玩意的，解决方法有二，<br>一：修改/etc/hadoop/yarn-env.sh<br>export YARN_RESOURCEMANAGER_OPTS=”–add-modules=ALL-SYSTEM”<br>export YARN_NODEMANAGER_OPTS=”–add-modules=ALL-SYSTEM”<br>二：下载JDK8，把JDK11换成JDK8<br>我肯定首先修改配置文件啊，这比换JDK简单点，但是…..不行，无奈之下去下载JDK8，这时候下载JDK还需要注册Oracle的账号，没办法，注册吧<br>然后下载JDK，更换四个节点的JDK，很激动，应该可以了吧，这次不能再出事了吧，启动着，先去厕所。。。。回来之后，很激动的jps，尼玛，还是没有，打开日志文件，又Error<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/20.png" alt="20"><br>找解决办法吧，也没招啊，感谢下面两个作者<br><a href="http://www.pianshen.com/article/7314336061/" target="_blank" rel="noopener">http://www.pianshen.com/article/7314336061/</a>      <a href="https://inote.xin/182.html" target="_blank" rel="noopener">https://inote.xin/182.html</a><br>只能把四个节点的Hadoop删掉，重新配置<br>然后再start-all.sh，老天爷不能再错了吧。。。。。。。。。。。唉，皇天不负有心人啊，搞了一个多周的Hadoop+spark搭建，终于完成了Hadoop的搭建，醉了，这个JDK啊<br>解决上述错误期间，还把Hadoop的配置改了改，大概按照书上的改的，具体如下<br>Master<br>hadoop-env.sh<br>export JAVA_HOME=/home/master/software/jdk1.8.0_211<br>core-site.xml 没改变<br>hdfs-site.xml<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/21.png" alt="21"><br>mapred-site.xml 没改变<br>yarn-site.xml<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/9.jpg" alt="9"><br>workers 没改变</p>
+<p>Slaver1-3<br>hadoop-env.sh<br>export JAVA_HOME=/home/slaver1/software/jdk1.8.0_211        slaver后的数字随节点变<br>core-site.xml<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/21.png" alt="22"><br>hdfs-site.xml<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/23.png" alt="23"><br>mapred-site.xml<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/24.png" alt="24"><br>yarn-site.xml<br><img src="http://JadenFK.github.io/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/25.png" alt="25"><br>workers 添加上另外三个计算机的名即可</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxbfmppv001grk7kaxj4ib8q" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/24/VitualBox建三台虚拟机Ubuntu18-04试搭建Hadoop3-2-spark2-4/" data-id="cjxfq76sc001atg7kfpclg80r" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li></ul>
